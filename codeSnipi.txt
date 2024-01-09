@@ -1,0 +1,6204 @@
+
+
+BASICS: CODE SNIPPETS
+Authour : Manik Tambulkar -> https://www.linkedin.com/in/maniktambulkar/
+
+1.Datatypes (34)
+2.Operators (50)
+3.Keywords  (12)
+4.Scope     (29)
+5.Modifiers (17)
+6.Class Declarations (9)
+7.Command Line Arguments (13)
+8.Control flow Statements (45)
+9 Looping  (72)
+10.Inputs and Output(65)
+
+A
+********************************************************************
+Topic: Data Types
+1. 
+Code :	
+class ManLabs{
+				public static void main(String[] args){
+					byte var1 = 130;
+					System.out.println(var1);
+				}
+}
+Options :	
+				A) 130 *
+				B) -126
+				C) Compile time error
+				D) Run time error
+
+2)	
+Code :	
+class ManLabs{
+				public static void main(String[] args){
+					char var1 = '65';
+					System.out.println(var1);
+				}
+}
+Options :
+				A) A *
+				B) a
+				C) 65
+				D) Compile time error
+
+
+3. 
+Code:
+class ManLabs{
+		public static void main(String[] args){
+			int var1 = 100L;
+			System.out.println(var1);
+		}
+}
+Options :	
+				A) 100
+				B) Compile time error
+				C) No error, but displays arbitrary value
+				D) None of the above *
+
+4. 
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					int var1 = 2147483648;
+					System.out.println(var1);
+				}
+}
+Options :	
+				A) 2147483648
+				B) error : incompatible types: possible lossy conversion from long to int 
+				C) error : integer number too large *
+				D) No error, but displays arbitrary value
+
+
+5. 
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					long var1 = 100;
+					System.out.println(var1);
+				}
+}
+Options :	
+				A) error : possible lossy conversion from int to long 
+				B) 100
+				C) Compile Time Error
+				D) Runtime Error
+
+6.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					byte var1 = 2147483648;
+					System.out.println(var1);
+				}
+}
+Options :
+				A) error: integer number too large *
+				B) error : possible lossy conversion from int to byte
+				C) error : possible lossy conversion from long to byte 
+				D) some arbitrary value
+
+7. 
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					char var1 = 0x61;
+					System.out.println(var1);
+				}
+}
+Options :		
+				A) error
+				B) prints some non alphabetic printable character
+				C) non printable character
+				D) a
+
+8.
+Code:
+class ManLabs{
+			public static void main(String[] args){
+				float var1 = 23.45;
+				System.out.println(var1);
+			}
+}
+Options :
+				A) 23.45
+				B) 23.45000
+				C) error : incompatible types : lossy conversion from double to float *
+				D) Arbitrary value
+
+9.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					double var1 = 23.45f;
+					System.out.println(var1);
+				}
+}
+Options :
+				A) 23.45
+				B) error : incompatible types : lossy conversion from float to double *
+				C) 23.450000762939453 (arbitrary value after decimal)
+				D) Completely arbitrary value
+
+10.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					double var1 = 2300L;
+					double var2 = 23;
+					System.out.println(var1);
+					System.out.println(var2);
+				}
+}
+Options :
+				A) 1 error
+				B) 2 errors
+				C) 2300.0 23.0
+				D) 2300 23
+
+11.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					int var1 = 24.5 / 2;
+					int var2 = 24.5f / 2;
+					int var3 = (int)24.5 / 2;
+					int var4 = (int)24.5f / 2;
+				}
+}
+Options :	
+				A) All
+				B) 1 and 2
+				C) 1, 2 and 3
+				D) No error
+
+12.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					char var1 = 'A' * 'a';
+					System.out.print(var1);
+				}
+			}
+Options :	
+				A) A
+				B) a
+				C) error : possible lossy conversion int cannot be 	converted to char
+				D) Some character
+
+13.
+Code:
+class ManLabs{
+				static boolean var1;
+				public static void main(String[] args){
+					System.out.print(var1);
+				}
+}
+Options :	
+				A) true
+				B) false
+				C) error : variable var1 might not have been initialized
+				D) None of the above
+
+14.
+Code:
+class ManLabs{
+			static long var1;
+			public static void main(String[] args){
+					System.out.print(var1);
+			}
+}
+Options :	
+				A) 0l
+				B) 0
+				C) 1
+				D) error : variable var1 might not have been initialized
+
+
+15.
+Code:
+class ManLabs{
+				public static void main(String[] args){
+					float var1 = (float)(15/2);
+					System.out.print(var1);
+				}
+}
+Options :	
+				A) 7.5
+				B) 7.5f
+				C) 7.0
+				D) 7
+
+16.
+class ManLabs{
+				public static void main(String[] args){
+					void var1;
+				}
+}
+Options :
+				A) error : void is not a datatype
+				B) error : illegal start of expression
+				C) No error	
+				D) error : variable var1 might not have been initialized
+
+17.
+Code:
+class ManLabs{
+	
+		public static void main(String[] args){
+			int var1;
+
+			var1=10;
+
+			if(var1==10){
+				int var2=20;
+				System.out.println(var1+var2);
+			}
+			else{
+				System.out.println(var1-var2);
+			}
+		}
+}
+Options : 
+		A) 30
+		B) -10
+		C) Compile time error 
+		D) Runtime error 
+
+18.
+Code:
+class ManLabs{
+	
+	public static void main(String[] args){
+		short var1 =10;
+		var1= var1*5;
+		System.out.println(var1);
+	}
+}
+Options:
+	A) 50
+	B) 50.00
+	C) Error
+	D) NaN
+
+19.
+Code:
+class ManLabs{
+	
+	public static void main(String[] args){
+
+		int var1 =5;
+		
+		System.out.println(--var1*var1+5);
+	}
+}
+Options:
+	A) 25
+	B) 16
+	C) 21
+	D) Error	
+
+20.
+Code:
+class ManLabs{
+	
+	public static void main(String[] args){
+		double var1 =12/3;
+		char var2 =0;
+		System.out.println(var1/1*(var2)/0); 
+		System.out.println(0.0/0);
+	}
+}
+Options:
+	A) Infinity
+	B) NaN
+	B) divide by zero exception
+	D) Compile time error
+
+21.
+Code:
+class ManLabs{
+
+	public static void main(String[] args){
+		int var;
+		System.out.println(var=10+(var=20));
+	}
+}
+Options:
+	A) 30
+	B) Error
+	C) 40
+	D) 20
+
+22.
+Code:
+class ManLabs{
+	
+	public static void main(String[] args){
+		int var1 = 10-10;
+		char var2 = 'A';
+		System.out.println(var1+var2);
+	}
+}
+Options:
+	A) Error 
+	B) 75
+	C) 65
+	D) Exception
+
+23.
+Code:	
+class ManLabs{
+	
+	public static void main(String[] args){
+		byte var1 =10;
+		int var2 =126;
+		
+		var1 =var1+var2;
+		System.out.println(var1);	
+	}
+}
+Options: 
+	A) 136
+	B) Error
+	C) 136.00
+	D) Exception
+
+24.
+class ManLabs{
+	
+	public static void main(String[] args){
+		
+		boolean var = 10;
+
+		System.out.println(++var);
+	}
+}
+Options:
+	A) 10
+	B) 11
+	C) Error
+	D) true
+
+25.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+            int var1 = Integer.SIZE;    
+            System.out.println(var1+" ");
+            
+            int var2 = Float.size;
+            System.out.println(var2);
+        }
+    }  
+Options:
+			A) error:cannot find symbol int var2 = Float.size;
+                                   ^
+    	B) error:cannot find symbol int var1 = Integer.SIZE;
+                                   ^
+    	C) 4 4 
+    	D) 32 32.
+
+
+26.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            int var1 = 19;
+            if(var1) {
+
+                System.out.println("In If");
+            }
+            else {
+
+                System.out.println("In Else");
+            }
+        }
+}
+Options:
+   		A) In If
+    	B) In else
+    	C) Compile Time Error.
+    	D) In If In Else.
+
+
+27.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            char var1 = '\n';
+            System.out.println(var1);
+        }
+    }
+Options:
+    A)	 print new extra line  
+    B)	Error.
+    C)	\n
+    D)	10  
+
+28.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            int var1 = 0x1a;
+            System.out.print(var1+" ");
+            
+            int var2 = 021;
+            System.out.println(var2);
+        }
+}
+Options :
+		A) 16 21
+    B) 10 21
+    C) 26 17
+    D) 10 17
+
+
+29.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+    1        String var1 = "Manik";
+    2        System.out.print(var1+" ");
+            
+    3        char var2 = 'S';
+    4        System.out.print(var2+" ");
+            
+    5        Character var3 = 'S';
+    6        System.out.println(var3);
+        }
+    }
+Options:
+		A) Compile Time Error At Line 5.
+    B) Compile Time Error At Line 6.
+    C) Compile Time Error At Line 3.
+    D) Manik S S
+
+30.
+ class ManLabs {
+
+        public static void main(String[] args) {
+     
+            String var1 = "010";
+            System.out.print(Integer.valueOf(var1,2)+" ");
+            
+            Integer var2 = 20;
+            System.out.println(var2.parseInt(var2.toString(),16));
+        }
+  }
+  Options: 
+  		A) NumberFormatException: for input string:20"              
+    	B) 2 32
+    	C) NumberFormatException: for input string : "010"
+    	D) Compile Time Error.
+
+
+31.
+class ManLabs {
+
+        public static void main(String[]args) {
+
+				char var = '\\';                                                                                                                       
+				System.out.println(var);
+        }
+}
+Options:
+		A) error: ';' expected
+		B) error: illegal escape character
+		C) \
+		D) \\
+
+32.
+class ManLabs {
+
+        char var1;
+
+        public static void main(String[] args) {
+
+                new ManLabs().fun();
+        }
+
+        void fun() {
+
+                System.out.println(var1);
+        }
+}
+Options:
+	A) character with ascii value 0
+	B) garbage value
+	C) error
+	D) exception
+
+33.
+class ManLabs {
+
+        Object var1;
+
+        public static void main(String[] args) {
+
+                new ManLabs().fun();
+        }
+
+        void fun() {
+
+                System.out.println(var1);
+        }
+}
+Options:
+		A) null
+		B) garbage value
+		C) error
+		D) exception
+
+34.
+class ManLabs{
+	public static void main(String[] dsj){
+		String true="10";
+		int var2=20;
+		System.out.println(" "+true+var2);
+
+	}
+}
+Options:
+		A) 1020
+		B) Error 
+		C) 30
+		D)  1020
+********************************************************************
+OPERATORS :
+1. 
+class ManLabs{
+				public static void main(String[] args){
+					System.out.println((3 * 4)/4 + 1);
+				}
+}
+Options :		
+				A) 2
+				B) 2.4
+				C) 4
+				D) 5
+
+2.
+class ManLabs{
+				public static void main(String[] args){
+					int b = 10;
+					System.out.println((b = 3) + b);
+				}
+}
+Options : 
+				A) 13
+				B) 3
+				C) 6
+				D) Syntax error
+
+3.
+class ManLabs{
+				public static void main(String[] args){
+					int b = 10;
+					System.out.println(b = 3);
+				}
+}
+Options : 	
+				A) b = 3
+				B) Syntax error
+				C) 10
+				D) 3
+
+4.
+class ManLabs{
+				public static void main(String[] args){
+					int a = 10, b = 10, c = 10, d = 10;
+					System.out.println(++a);
+					System.out.println(b++);
+					System.out.println(+-c);
+					System.out.println(-++d);
+				}
+}
+Options :	
+				A) 11 11 -10 -11
+				B) 10 10 10 11
+				C) 11 10 10 10
+				D) 11 10 -10 -11
+
+5.
+class ManLabs{
+				public static void main(String[] args){
+					int a = 10;
+					System.out.println(~a);
+				}
+}
+Options :
+				A) -10
+				B) -11
+				C) 10
+				D) 11
+
+6.
+class ManLabs{
+				public static void main(String[] args){
+					ManLabs c2w = null;
+					System.out.println(c2w instanceof ManLabs);
+				}
+}
+Options :	
+				A) Compile time error
+				B) true
+				C) false
+				D) null
+
+7.
+class ManLabs{
+				public static void main(String[] args){
+					ManLabs c2w = new ManLabs();
+					System.out.println(c2w instanceof ManLabs);
+				}
+}
+Options :
+				A) Compile time error
+				B) true
+				C) false
+				D) null
+
+8.
+class Parent{
+	
+}
+class ManLabs extends Parent{
+				public static void main(String[] args){
+					ManLabs c2w = new ManLabs();
+					System.out.println(c2w instanceof Parent);
+				}
+}
+Options :
+				A) true
+				B) false
+				C) Compile time error
+				D) null
+
+9.
+class Parent{
+	
+}
+class ManLabs extends Parent{
+				public static void main(String[] args){
+					Parent var = new Parent();
+					System.out.println(var instanceof ManLabs);
+				}
+}
+Options :	
+				A) true
+				B) false
+				C) Compile time error
+				D) null
+
+10.
+class Parent{
+	
+}
+class ManLabs extends Parent{
+				public static void main(String[] args){
+					Parent var = new ManLabs();
+					System.out.println(var instanceof Parent);
+				}
+}
+Options :
+				A) true
+				B) false
+				C) Compile time error
+				D) null
+
+11.
+class Parent{}
+
+			class ManLabs extends Parent{
+				public static void main(String[] args){
+					Parent var = new ManLabs();
+					System.out.println(var instanceof ManLabs);
+				}
+			}
+Options :	
+				A) true
+				B) false
+				C) Compile time error
+				D) null	
+12.
+class ManLabs{
+				public static void main(String[] args){
+					boolean var1, var2, var3;
+					System.out.println(var3 = (var2 = false) == true);
+				}
+			}
+Options :	
+				A) true
+				B) false
+				C) Compile time error
+				D) null
+
+
+13.
+class ManLabs{
+				public static void main(String[] args){
+					int var1 = 10;
+					System.out.println(var1 instanceof Integer);
+				}
+			}
+Options :	
+				A) true
+				B) false
+				C) null
+				D) Compile time error
+
+
+
+14.
+class ManLabs{
+				public static void main(String[] args){
+					int var1, var2 = 10, var3;
+					var1 = var2 = var3 = 45;
+
+					System.out.println(var1 + " " + var2 + " " + var3);
+				}
+}
+Options :
+				A) 10 10 45
+				B) 10 45 45
+				C) 45 45 45
+				D) 10 10 10
+
+16.
+class ManLabs{
+				public static void main(String[] args){
+					int vararr[] = {10, 20, 30, 40, 50};
+					int var1 = 4;
+					vararr[var1] = var1 = 2;
+
+					System.out.println(vararr[0] + " " + vararr[1] + " " + vararr[2] + " " + vararr[3] + " " + vararr[4]);
+				}
+}
+Options :
+				A) 10 20 2 40 50
+				B) 10 20 4 40 50
+				C) 10 20 30 40 2
+				D) 10 20 30 40 4
+
+17.
+class ManLabs{
+				public static void main(String[] args){
+					System.out.println(4 / 0);
+				}
+			}
+	Options :		
+				A) Infinity
+				B) Divide by zero exception
+				C) Compile time error
+				D) None
+
+18.
+class ManLabs{
+				public static void main(String[] args){
+					double var1 = (4.0 / 0);
+					System.out.println(var1);
+				}
+}
+Options :	
+				A) Infinity
+				B) Divide by zero exception
+				C) Compile time error
+				D) None
+
+19.
+class ManLabs{
+				public static void main(String[] args){
+					int var1 = 10;
+					System.out.println(var1 instanceof Integer);
+				}
+			}
+Options :	
+				A) true
+				B) false
+				C) null
+				D) Compile time error
+
+20.
+class ManLabs{
+				public static void main(String[] args){
+					System.out.println((4.0 / 0) instanceof String);
+				}
+}
+Options :	
+				A) Compile time error
+				B) Divide by zero exception
+				C) true
+				D) false
+
+21.
+class ManLabs{
+	
+	static int var = 2;	
+	public static void main(String[] args){
+
+		var=(var=4)*(++var);
+		System.out.println(var);
+	}
+}
+Options:
+	A) 12
+	B) 17
+	C) 20
+	D) 9
+
+22.
+class ManLabs{
+	
+	public static void main(String[] args){
+
+		int var1=10;
+		double var2=11;
+
+		if(boolean var3=true)
+			System.out.println(++var1);
+		else
+			System.out.println(++var2);		
+	}
+}
+Options:
+	A) 11
+	B) 12
+	C) 10
+	D) Error
+
+23.
+class ManLabs
+{ 
+    public static void leftshift(int var1, int var2) 
+    {
+        var1 <<= var2; 
+    } 
+    public static void main(String args[]) 
+    {
+        int var1 = 4, var2 = 2; 
+        leftshift(var1, var2); 
+        System.out.println(var1); 
+    } 
+}
+Options:
+		A) 4
+		B) 7
+		C) Error
+		D) 8
+
+24.
+class ManLabs 
+{
+    public static void main(String [] args) 
+    {
+        int var1= 0;
+        int var2= 0;
+        for (int var3 = 0; var3 < 5; ++var3) 
+        {
+            if (( ++var1 > 2 ) && (++var2 > 2)) 
+            {
+                var1++;
+            }
+        }
+        System.out.println(var1 + " " + var2);
+    }
+}
+Options:
+		A) 6 3
+		B) 6 2
+		C) 5 3
+		D) 5 2
+
+25.
+class ManLabs
+    {
+        public static void main(String args[]) 
+        {    
+             int var1 = 3;
+             int var2 = 6;
+ 	     int var3 = var1 | var2;
+             int var4 = var1 & var2;    
+
+             System.out.println(var3 + " "  + var4);
+        } 
+ }
+ Options:
+		A) 7 2
+		B) 10 2
+		C) Error
+		D) 7 3
+
+26.
+class ManLabs{
+	
+	public static void main(String[] args){
+		int var1=23;
+		double var2 = 23.5;
+		boolean b=(var1=var2);
+		System.out.println(b);
+	}
+}
+Options:
+		A) Error
+		B) true
+		C) false
+		D) 2
+
+27.
+class ManLabs{
+	
+	public static void main(String[] args){
+		int var1=10;
+
+		int var2= var1==10 ? var1++ : ++var1;
+		
+		System.out.println(var2);
+	}
+}
+Options:
+		A) 11
+		B) 10
+		C) Error
+		D) 12
+
+28.
+class ManLabs{
+	
+	public static void main(String[] args){
+
+		int var1=10;
+		int var2=20;
+
+		System.out.println(!(var1>var2) && (var1>var2));
+		
+	}
+}
+Options:
+		A) true 
+		B) false
+		C) 0
+		D) 1
+
+29.
+class ManLabs{
+	
+	public static void main(String[] args){
+		int var1=5;
+		int var2=-5;
+		System.out.println((~(~var1)));
+		System.out.println(~var2);	
+	}
+}
+Options:
+		A) 5 4
+		B) -5 -4
+		C) 5 -4
+		D) -5 4
+
+30.
+class ManLabs{
+	
+	public static void main(String[] args){
+
+	int var=10;
+
+	System.out.println(var++ +" "+ ++var +" "+ var++);
+	}
+}
+Options:
+		A) 10 12 12
+		B) 10 11 11
+		C) 10 11 12
+		D) 10 10 12 
+
+31.
+class ManLabs {
+        public static void main(String[] args) {
+            int var1 = 10;
+            int var2 = -var1;
+
+            int var3 = var1*var2;
+            int var4 = var1*-var2;
+
+            if(var3 == -var4)
+                System.out.println(var3);
+            else
+                System.out.println(var4);
+        }
+    }            
+Options:
+    A)100
+    B) -100
+    C) Compile Time Error
+    D) None Of The Above
+
+32.
+class ManLabs {
+        public static void main(String[] args) {		
+            
+            double var1 = 20.5;
+            double var2 = var1++;
+            System.out.println(var2);
+            double var3 = ++var1;
+            System.out.println(var3);	
+        }
+    }
+Options:
+    A) 21.5 22.5
+    B) 20.5 21.5
+    C) 21.5 22.5
+    D) 20.5 22.5
+
+33. 
+class ManLabs {
+        public static void main(String[] args) {
+            
+            int var1 = 20;
+            int var2 = ++var1;
+            int var3 = var2++;	
+            int var4 = var1--;
+
+            int var5 = ++var1 + var2++ - --var2 + ++(var1++);
+            System.out.println(var5);
+        }
+    }
+Options:
+		A) 44
+    B) 43 
+    C) 45
+    D) Compile Time Error.
+
+34.  
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            int var1 = 10;
+            int var2 = ++var1 + ++var1;
+            System.out.println(var1);
+            System.out.println(var2);
+        }
+}
+Options:
+    A) 12 23
+    B) 12 24
+    C) 11 23
+    D) 11 24
+
+35.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            char var1 = 'A';
+            char var2 = 'a';
+            
+            System.out.println(var1 > var2);
+        }
+    }
+Options:
+  	A) false
+    B) true
+    C) Compile Time Error
+    D) None Of The Above.
+
+36.
+ class ManLabs {
+
+        public static void main(String[] args) {
+            
+            int var1 = 10;
+            int var2 = 20;
+
+            int var3 = var1 && var2;
+            System.out.println(var3);
+        }
+    }
+Options:
+    A) 20
+    B) 10
+    C) Compile Time Error
+    D) None Of The Above.
+
+37.
+class ManLabs {
+        public static void main(String[] args) {
+            
+            char var1 = 'B';
+            char var2 = 'C';
+            int var3 = var1 & var2;
+            System.out.println((char)var3);
+        }	
+    }
+Options:
+    A) Compile Time Error
+    B) 65
+    C) B
+    D) C
+
+
+38.
+class ManLabs {
+        public static void main(String[] args) {
+            
+            int var1 = 10;
+            int var2 = 12;
+
+            int var3 = var1 & var2;
+            System.out.println(var3);
+        }	
+    }
+Options: 
+  	A)10
+    B) 12
+    C) 8
+    D) Compile Time Error.
+
+39.
+class ManLabs{
+        public static void main(String[] args) {
+            
+            int var1 = 10;
+            System.out.println(~var1);
+        }
+    }
+Options:
+    A) -11
+    B) -10
+    C) Compile Time Error.
+    D) None Of The Above.
+
+40.
+class ManLabs {
+        public static void main(String[] args) {
+            
+            int var1 = 10;
+            int var2 = 20;
+
+            boolean var3 = (var1==10 || var2 == 20);
+            System.out.println(var3);
+        }
+    }            
+Options:
+     A) true
+     B) false
+     C) Compile Time Error
+     D) None of The Above.
+
+ 41.
+ class ManLabs {
+
+        public static void main() {
+
+                boolean var1=true, var2=false;
+                System.out.println(var1 + var2);
+        }
+}
+Options:
+		A) true
+		B) false
+		C) None of the above
+		D) Compile time error
+
+42.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		int var = 8 & 6 ^ 4 | 12;
+		System.out.println(var);
+	}
+}
+Options:	
+		A) 14
+		B) 12
+		C) 16
+		D) 20
+
+43. 
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		System.out.println(14 % -4);
+	}
+}
+Options :
+		A) 2
+		B) -2
+		C) 3
+		D) compile time error	
+
+44.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                boolean puneMetro = true;
+                String s = puneMetro ? "Metro Running" : "Metro not running";
+                System.out.println(s);
+        }
+}
+Options:
+		A) Metro Running
+		B) Metro not Running
+		C) Compile time Error
+		D) Exception
+
+45.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		char var1 = 'Z'; 
+		System.out.println(--var1++);
+	}
+}
+Options:
+A) z
+B) Y 
+C) X
+D) compile time error
+
+46.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		char var1 = 'Z';
+		char var2 = 'T';
+		System.out.println(var2 = var1--);
+		System.out.println(--var2);
+	}
+}
+Options:
+	A) Y Y
+	B) Y Z
+	C) Z Y
+	D) Z Z
+
+47.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		System.out.println(4 << 4);
+	}
+}
+Options:
+	A) 16
+	B) 69
+	C) 64
+	D) 08
+
+48.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		System.out.println(10 >> 2);
+	}
+}
+Options:
+	A) 04
+	B) 08
+	C) 02
+	D) 00
+
+49.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+			System.out.println(12==12 ? 12|2 : 22&10);
+	}
+}
+Options:
+	A) 24
+	B) 14
+	C) 02
+	D) 220
+
+50.
+class ManLabs {
+
+	public static void main(String[]args) {
+
+		int var = 2;
+		System.out.println(true == (13!=4) ? var+=4 : var*=4);
+	}
+}
+Options:
+	A) false
+	B) 06
+	C) 08
+	D) runtime exception
+
+
+********************************************************************
+KEYWORDS:
+1.
+class ManLabs{
+				public static void main(String[] args){
+					if(true)
+						break;
+				}
+}
+Options :	
+				A) error : illegal expression
+				B) error : break outside switch or loop
+				C) No error
+				D) error : cannot find symbol
+
+2.
+class ManLabs{
+				public static void main(String[] args){
+					if(true)
+						continue;
+				}
+}
+Options :	
+				A) error : illegal expression
+				B) error : continue outside of loop
+				C) No error
+				D) error : cannot find symbol
+
+3.
+class ManLabs{
+				public static void main(String[] args){
+					System.out.println("In main");
+					fun();
+				}
+				public static void fun(){
+					return;
+					System.out.println("In fun");
+				}
+}
+Options :	
+				A) In main
+				B) In main
+				   In fun
+				C) Compile time error
+				D) Run time error
+
+4.
+class ManLabs{
+	static final int var;
+
+	public static void main(String[] args){
+		var=10;
+		System.out.println(var);
+	}
+}
+Options:
+		A) Error
+		B) 0
+		C) 10
+		D) garbage value
+
+5.
+class ManLabs{
+
+	public static void main(String[] args){
+
+		final int var;
+		var=10;
+		System.out.println(var);
+	}
+}
+Options:
+		A) Error
+		B) 0
+		C) 10
+		D) garbage value
+
+
+6.
+class ManLabs{
+	
+	public static void main(String[] args){
+
+		int var1=5;
+		for(var1=0;var1<5;var1++){
+			continue;
+			break;
+		}
+	System.out.println("Hello");
+	}
+}
+Options:
+	A) Error
+	B) Hello
+	C) Exception
+	D) None of the above
+
+
+7.
+class ManLabs {
+
+        public static void main(String[] args) {
+            
+            int assert = 10;
+
+            assert *= 10;
+
+            System.out.println(assert);
+        }
+    }
+Options:
+    A) 100
+    B) 20
+    C) Compile Time Error
+    D) None Of The Above.
+
+8.
+class ManLabs {
+
+        void static public method1() {
+
+            System.out.println("In Method1");
+        }
+        public static void main(String[] args) {
+            
+            method1();
+        }
+    }
+Options:
+		A) 3 Errors
+    B) In Method1
+    C) 1 Error
+    D) Error is not mentioned above.
+
+9.
+ import java.io.*;
+    class ManLabs {
+
+        public static void main(String[] args) throw IOException {
+            
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 		
+            String var1 = br.readLine();
+            System.out.println(var1);
+        }
+    }    
+
+    A) Error :- public static void main(String[] args) ^ ';' expected
+    B) Error :- public static void main(String[] args) ^ 'throw' written, 'throws' expected.
+    C) Error :- cannot find symbol BufferedReader.
+    D) Gives Output same as Input String.
+
+10.
+class ManLabs {
+        public static void main(String[] args) {
+            int Public = 10;
+            Public *= 10;
+            System.out.println(Public);
+        }
+    }    
+Options:
+    A) 100
+    B) 10
+    C) Error.
+    D) None Of The Above.
+
+11.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                int strictfp = 10;
+                System.out.println(strictfp);
+        }
+}
+Options:
+		A) 10
+		B) Compile time Error
+		C) Checked Exception
+		D) Unchecked Exception
+
+12.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                int volatile = 10;
+                System.out.println(volatile);
+        }
+}
+Options:
+		A) 10
+		B) Compile time Error
+		C) Checked Exception
+		D) Unchecked Exception
+
+******************************************************************
+SCOPE:
+1.
+class ManLabs {
+
+        boolean var1 = true;
+
+        public static void main(String[] args) {
+
+                System.out.println(var1);
+        }
+}
+Options:
+a) true
+b) Compile time error
+c) Checked Exception
+d) Unchecked Exception
+
+2.
+class ManLabs {
+
+        static boolean var1 = true;
+
+        public static void main(String[] args) {
+
+                System.out.println(new ManLabs().var1);
+        }
+}
+Options:
+a) true
+b) Compile time error
+c) Checked Exception
+d) Unchecked Exception
+
+3.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println("In main");
+        }
+
+        static {
+
+                System.out.println("In static");
+        }
+}
+Options:
+a) In main, In static
+b) In static, In main
+c) In main
+d) In static
+
+4.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                method1();
+        }
+
+        void method1() {
+
+                System.out.println("In method1");
+        }
+}
+Options:
+a) In method1
+b) Compile time error
+c) Checked Exception
+d) Unchecked Exception
+
+5.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                ManLabs.method1();
+        }
+
+        static void method1() {
+
+                System.out.println("In method1");
+        }
+}
+Options:
+a) In method1
+b) Compile time error
+c) Checked Exception
+d) Unchecked Exception
+
+6.
+class ManLabs {
+
+        int var1 = 10;
+
+        public static void main(String[] args) {
+
+                int var1 = 20;
+                System.out.println(var1);
+        }
+}
+Options:
+a) 10
+b) 20
+c) Compile time error
+d) Ambiguity
+
+7.
+class ManLabs {
+
+        public static int var1 = 10;
+
+        public static void main(String[] args) {
+
+                int var1 = 20;
+                ManLabs.method1();
+        }
+
+        public static void method1() {
+
+                System.out.println(var1);
+        }
+}
+Options:
+a) 10
+b) 20
+c) Compile time error
+d) Ambiguity
+
+8.
+class ManLabs{
+					public static void main(String[] args){
+						char var1 = 'a';
+						switch(var1){
+							case 'a' :	int var2 = 10;
+										System.out.println(var2);
+							case 'b' :	int var2 = 20;
+										System.out.println(var2);
+							case 'c' :	int var2 = 30;
+										System.out.println(var2);
+							default	 :	int var2 = 40;
+										System.out.println(var2);
+						}
+					}
+				}
+Options :	
+	a) 10
+	b) error : call to member 'var2' is ambiguous
+	c) error : variable var2 is already defined in method main
+	d) 10 20 30 40
+
+9.
+class ManLabs{
+					public static void main(String[] args){
+						int var = 20;
+						{
+							var = 10;
+						}
+						System.out.println(var);
+					}
+				}
+Options :
+	a) error : illegal start of expression
+	b) 20
+	c) 10
+	d) Compile time error 
+
+10.
+class ManLabs{
+					public static void main(String[] args){
+						{
+							int var = 10;
+						}
+						System.out.println(var);
+					}
+				}
+Options :	
+		a) error : illegal start of expression
+		b) error : cannot find symbol 'var'
+		c) 10
+		d) 0
+
+11.
+class ManLabs{
+					public static void main(String[] args){
+						int var = 20;
+						{
+							int var = 10;
+							System.out.println(var);
+						}
+						System.out.println(var);
+					}
+				}
+Options :	
+	a) error : cannot find symbol var
+	b) error : variable var is already defined in method main
+	c) 20 10
+	d) 10 20
+
+12.
+public class ManLabsParent{
+					{
+						int var = 10;
+					}
+					public ManLabsParent(){
+						System.out.println("ManLabsParent constructor");
+					}
+					public static void main(String[] args){
+						ManLabsParent c2w = new ManLabsParent();
+						System.out.println(c2w.var);
+					}
+				}
+Options :	
+	a)	error : cannot find symbol
+	b)	10
+	c)	ManLabsParent constructor
+			10
+	d)	Arbitrary value
+
+13.
+class ManLabsParent{
+					{
+						void m1(){
+							System.out.println("In m1");
+						}
+					}
+					ManLabsParent(){
+						System.out.println("ManLabsParent constructor");
+					}
+					public static void main(String[] args){
+						ManLabsParent c2w = new ManLabsParent();
+					}
+				}
+Options :
+		a) Allowed and m1() can be accessed anywhere inside the class.
+		b) Allowed but m1() cannot be accessed outside the block.
+		c) Not allowed
+		d) None of the above
+
+14.
+class ManLabs{
+					public static void main(String[] args) {
+						private int var = 10;
+						System.out.present(var);
+					}
+				}
+Options :	
+		a) error : illegal modifier private used in static context
+		b) 10
+		c) error : illegal start of expression
+		d) error : private member cannot be declared in a public block
+
+15.
+class ManLabs{
+					public static void main(String[] args) {
+						m1();
+					}
+					private static void m1(){
+						private int var = 10;
+						System.out.println(var);
+					}
+				}
+Options :
+	a) error : illegal modifier private used in static context
+	b) 10
+	c) error : illegal start of expression
+	d) error : private member cannot be declared in a public block
+
+16.
+class ManLabs{
+	
+	static {
+		int var1=10;
+	}
+	public static void main(String[] dsj){
+		System.out.println(this.var1++);
+	}		
+}
+Options:
+		a) 11
+		b) compile error
+		c) 10
+		d) 0
+
+17.
+class ManLabs{
+	int display(final int var){
+		return var++;
+	}
+	public static void main(String[] dsj){
+		int var=5;
+
+		System.out.println(new ManLabs().display(var));
+	}
+}
+Options:
+		a) compile error
+		b) 5
+		c) 6
+		d) none
+
+18.
+class ManLabs{
+	int num;
+	public static void main(String[] dsj){
+		int num=10;
+		System.out.println(num);
+		System.out.println(new ManLabs().num);
+	}
+}
+Options:
+		a) 10  0
+		b) 10  10
+		c) 0   10
+		d) 10  10
+
+19.
+class ManLabs{
+	public static void main(String[] args){
+		int num=10;
+		{
+			{
+				{
+					int num=20;
+					System.out.println(num);
+				}
+			}
+		}
+		System.out.println(num);
+	}
+}
+Options:
+		a.20 10
+		b.Compiler Error(Already Define)
+		c.20 20
+		d.Compilation Error(Syntax Error)
+
+20.
+class ManLabs {
+	int var1 = 10;
+	public static void main(String[] args) {
+		
+		int var1 = 20;
+		System.out.println(var1);
+	}
+}
+Options:
+		a)20
+		b)10
+		c)Compile Time Error For Redifination
+		d)None Of The Above.
+
+21.
+class ManLabs {
+	int var1 = 10;
+    int var2 = 20;
+	public static void main(String[] args) {
+		System.out.println(var1+var2);
+	}
+}
+Options:
+		a)10
+		b)Compile Time Error
+		c)30
+		d)1020
+
+22.
+class ManLabs {
+	static int var1 = 10;
+	public static void main(String[] args) {
+		
+		showVar1();
+		System.out.println(var1);
+	}
+	static void showVar1() {
+
+		System.out.println(var1++);
+	}
+}  
+Options:
+		(a)10 10
+		(b)10 11
+		(c)11 11 
+		(d)Compile Time Error.
+
+23.
+class ManLabs {
+	static int var1 = 10;
+	public static void main(String[] args) {
+		
+		ManLabs c2w = new ManLabs();
+		System.out.println(c2w.var1++);
+		showVar1();
+	}
+	static void showVar1() {
+
+		System.out.println(++var1);
+	}
+}		
+Options:
+(a)10 10
+(b)10 12
+(c)11 11
+(d)11 12
+
+24.
+class ManLabs {
+	static int var1 = 10;
+	public static void main(String[] args) {
+		
+		ManLabs c2w = new ManLabs();
+		c2w.showVar1();	
+	}
+	void showVar1() {
+
+		System.out.println(++var1);
+	}
+}
+Options :
+	(a)11
+	(b)10
+	(c)Comple Time Error For Non-Static Variable Accessing Static Variable Directly. 
+	(d)None Of The Above
+
+25.
+class ManLabs {
+	static int var1 = 10;
+	static {
+		System.out.println(++var1);
+		showVar1();
+	}
+	public static void main(String[] args) {
+		System.out.println("In Main");		
+	}
+	static void showVar1() {
+		System.out.println(var1);
+		System.out.println("In showVar1");
+	}
+}
+Options: 
+	(a)11 11 In showVar1 In Main
+	(b)In Main 11 11 In showVar1
+	(c)In Main
+	(d)Compile Time Error
+
+
+26.
+class ManLabs {
+	int var1 = 10;
+	public static void main(String[] args) {
+		ManLabs c2w = new ManLabs();
+		c2w.method1();
+		System.out.println(c2w.var1);
+	}
+	void method1() {
+		int var1 = 20;
+		System.out.println(this.var1++);
+		System.out.println(var1);
+	}
+}
+Options:
+	(a)10 11 11
+	(b)10 20 11
+	(c)20 11 10
+	(d)20 21 10
+
+27.
+class ManLabs {
+	static int var1 = 10;
+	static {
+
+		System.out.println(var1++);
+		System.exit(0);	
+	}
+	public static void main(String[] args) {
+		System.out.println("In Main");
+		System.out.println(var1++);
+	}
+}		
+Options:
+	(a)10 In Main 11
+	(b)In Main 10 11
+	(c)In Main 11 12
+	(d)10
+
+28.
+class ManLabs {
+	public static void main(String[] args) {
+		{
+			//b1
+			int var1 = 20;
+			{
+				//b2
+				int var1 = 30;
+				System.out.println(++var1);
+			}
+			System.out.println(++var1);
+		}
+		{
+			System.out.println(++var1);
+		}
+	}
+}		
+Options:
+		(a)One Compile Time Error Only.
+		(b)Two Compile Time Errors.
+		(c)31 21 22
+		(d)31 21 21
+
+29.
+class ManLabs {
+	public static void main(String[] args) {
+		boolean var1 = true;
+		b1:{
+			b2:{
+				if(var1)
+					break b3;
+				b3:{
+					System.out.println("In Block 3");
+				}
+				System.out.println("In Block 2");
+			}
+			System.out.println("In Block 1");
+		}
+		System.out.println("In Main");
+	}
+}
+Options :
+	(a)In Block 3 In Block 2 In Block 1 In Main
+	(b)In Block 2 In Block 1 In Main
+	(c)In Block 1 In Main
+	(d)Compile Time Error.
+
+*******************************************************************
+Modifiers
+1.
+class ManLabs {
+
+        static public void main(String[] args) {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a) In main
+b) Exception
+c) Compile time error
+d) Run time error
+Explaination
+a) The modifiers static and public can be written at position either 1 or 2
+
+2.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                private int var1 = 10;
+                System.out.println(var1);
+        }
+}
+Options:
+a)10
+b)Exception
+c)Run time error
+d)Compile time error
+
+3.
+class ManLabs {
+
+        void main() {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a) In main
+b) Compile time Error
+c) Run time Error
+d) Exception
+
+4.
+class ManLabs {
+
+        public void main() {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a) In main
+b) Compile time Error
+c) Run time Error
+d) Exception
+
+5.
+class ManLabs{
+					public static void main(String[] args) {
+						native ManLabs c2w;
+					}
+				}
+Options	:	
+		a) error : illegal modifier native used inside static context
+		b) Runtime exception
+		c) error : illegal modifier native used inside block
+		d) error : illegal start of expression
+
+6.
+class ManLabs{
+					public static void main(String[] args){
+						ManLabs c2w = new ManLabs();
+						c2w.m1();
+					}
+					default protected void m1(){
+						System.out.println("In m1");
+					}
+				}
+Options :
+	a) error : class, enum or method cannot have multiple accessibility modifiers
+	b) error : multiple modifiers provided
+	c) error : default not allowed here
+	d) error : protected not allowed here
+
+7.
+class ManLabs{
+					final int var;
+					
+					public static void main(String[] args){
+						ManLabs c2w = new ManLabs();
+						System.out.println(c2w.var);
+					}
+				}
+Options :
+		a) error : variable var might not have been initialized
+		b) error : variable var not initialized in the default constructor
+		c) 0
+		d) Random value
+
+8.
+class ManLabs{
+				final int var;
+				ManLabs(){
+					this.var = 30;
+				}
+				public static void main(String[] args){
+					ManLabs c2w = new ManLabs();
+					System.out.println(c2w.var);
+				}
+			}
+Options :	a) error : variable var might not have been initialized
+					b) error : cannot assign a value to final variable var
+					c) Default value for int (0)
+					d) 30
+
+9.
+class ManLabs{
+					final int var = 0;
+					ManLabs(){
+						this.var = 10;
+					}
+					public static void main(String[] args){
+						System.out.println(var);
+					}
+				}
+Options :	a) error : cannot assign a value to final variable var
+					b) error : non-static variable cannot be referenced from static context
+					c) 10
+					d) Both a and b
+10.
+class ManLabs{
+					final int var = 0;
+					ManLabs(){
+						this.var = 0;
+					}
+					public static void main(String[] args){
+						ManLabs c2w = new ManLabs();
+						System.out.println(c2w.var);
+					}
+				}
+Options :	a) error : cannot assign a value to final variable var
+					b) error : first line in constructor must be a call to super
+					c) 0
+					d) Both a and b
+
+11.
+class ManLabs{
+					public static void main(String[] args){
+						ManLabs c2w = new ManLabs();
+						c2w.method1();
+					}
+					void method1(){
+						static int var = 20;
+						System.out.println("var = " + var);
+					}
+				}
+Options :	a) error : static variable cannot be declared inside the static scope
+					b) error : non-static member cannot be accessed from the static context
+					c) error : illegal start of expression
+					d) var = 20		
+
+12.
+class ManLabs{
+					static int var;
+					public static void main(String[] args){
+						System.out.println(var);
+					}
+				}
+Options :	a) error : cannot find symbol 'var'
+					b) error : var might not have been initialized
+					c) error : static variable var cannot be referenced from a static context
+					d) 0	
+
+13.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Hey");
+					}
+					native void m1();
+				}
+Options :	a) error : illegal start of expression
+					b) error : missing method body, or declare abstract
+					c) Hey
+					d) Runtime error	
+
+14.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Hey");
+						ManLabs c2w = new ManLabs();
+						c2w.m1();
+					}
+					native void m1();
+				}
+Options :	a) error : illegal start of expression
+					b) error : missing method body, or declare abstract
+					c) Hey
+					d) Runtime error	
+
+15.
+protected class ManLabs{
+					public static void main(String[] args) {   
+						System.out.println("Inside main");
+					}
+				}
+Options :	
+		a) error : illegal start of expression
+		b) Inside main
+		c) error : modifier protected not allowed here
+		d) No compile time error, but cannot execute the program
+
+16.
+class ManLabsBase{
+	private ManLabs(){
+		System.out.println("In Base C2W");
+	}
+}
+
+class ManLabsChild extends ManLabsBase{
+	public ManLabsChild(){
+		System.out.println("Dervied C2W");
+	}
+
+	public static void main(String[] dsj){
+		new ManLabsChild();
+	}	
+}
+Options:
+		a) In Base C2W
+		   Dervied C2W
+		b) Exception is thrown at run time
+		c) Compilation Error
+		d) Derived C2W
+
+17.
+class ManLabs{
+	
+		protected int var1;
+		transient int var2=3;
+		private synchronized int e;
+		volatile int d;
+		public static void main(String[] dsj){
+ 			
+ 		}
+}
+Options:
+	a) compile normally
+	b) error at line 4
+	c) error at line 5
+	d) error at line 6
+
+*******************************************************************
+Class Declarations:
+1.
+final abstract class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a)In main
+b)Run time error
+c)Compile time error
+d)Exception
+
+2.
+class ManLabs {
+
+        static int var1 = 10;
+
+        public static void main(String[] args) {
+
+                ManLabs c = new ManLabs();
+                c.var1++;
+                ManLabs c1 = new ManLabs();
+                System.out.println(c1.var1);
+        }
+}
+Options:
+a)10
+b)11
+c)Compile time error
+d)Run time error
+
+3.
+class ManLabs {
+
+        int var1 = 10;
+
+        public static void main(String[] args) {
+
+                ManLabs c = new ManLabs();
+                c.var1++;
+                ManLabs c1 = new ManLabs();
+                System.out.println(c1.var1);
+        }
+}
+Options:
+a)10
+b)11
+c)Compile time error
+d)Run time error
+
+4.
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                final ManLabs var1 = new ManLabs();
+                System.out.println(var1);
+        }
+}
+Options:
+a)Address of object of Class ManLabs
+b)Exception
+c)Compile time error
+d)Run time error
+
+5.
+class final ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a)In main
+b)Run time error
+c)Compile time error
+d)Exception
+
+6.
+static class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a)In main
+b)Run time error
+c)Compile time error
+d)Exception
+
+7.
+abstract class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println("In main");
+        }
+}
+Options:
+a)In main
+b)Run time error
+c)Compile time error
+d)Exception
+
+8.
+strictfp class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main");
+					}
+				}
+Options :	a) error : illegal start of expression
+					b) error : strictfp modifier not allowed here
+					c) error : method main needs to be declared strictfp
+					d) Inside main
+
+9.
+public class ManLabs {
+	public static void main(String[] args) {
+		System.out.println("In ManLabs");
+		Main.main(args);
+	}
+}
+class Main {
+	public static void main(String[] args) {
+		System.out.println("In Main");
+	}
+}
+
+$>javac ManLabs.java
+$>java ManLabs
+
+Options:
+(a)In ManLabs java.lang.NullPointerException
+(b)In ManLabs In Main
+(c)In ManLabs
+(d)Compile Time Error.
+
+*******************************************************************
+Command Line Arguments:
+1.
+input:>java ManLabs Java Python
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println(args[0]);
+                System.out.println(args[1]);
+        }
+}
+Options:
+a) Java Python
+b) Python Java
+c) java ManLabs
+d) ManLabs Java
+
+2.
+input:>java ManLabs &
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println(args[0]);
+        }
+}
+Options:
+a) &
+b) Compile time error
+c) Run time error
+d) ArrayIndexOutOfBoundsException
+
+3.
+input:>java ManLabs "&"
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                System.out.println(args[0]);
+        }
+}
+Options:
+a) &
+b) Compile time error
+c) Run time error
+d) ArrayIndexOutOfBoundsException
+
+4.
+input:>java ManLabs
+class ManLabs {
+
+        public static void main(String args[]) {
+
+                System.out.println(args.length);
+        }
+}
+Options:
+a) 0
+b) 1
+c) Exception
+d) Error
+
+5.
+input:>java ManLabs Python Java C
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                String var1 = null;
+                var1 = args[0]+args[1]+args[2];
+                System.out.println(var1);
+        }
+}
+Options:
+a)PythonJavaC
+b)Exception
+c)Compile time error
+d)Run time error
+
+6.
+input:>java ManLabs 10 20 30
+class ManLabs {
+
+        public static void main(String[] args) {
+
+                String var1 = null;
+                var1 = args[0]+args[1]+args[2];
+                System.out.println(var1);
+        }
+}
+Options:
+a) 60
+b) 102030
+c) Compile time error
+d) Run time error
+
+7.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println(args[-1]);
+					}
+				}
+Compile this file as : javac Filename.java
+Run this file as : java ManLabs 1 2 3
+Options :	a) ManLabs
+					b) Compile time error
+					c) Runtime exception
+					d) 3
+
+8.
+class ManLabs{
+					public static void main(final String[] args) {
+						args[2] = new String("c2w");
+						System.out.println(args[2]);
+					}
+				}
+Compile this file as : javac Filename.java
+Run this file as : java ManLabs 1 2 3
+Options :	
+					a) Compile time error
+					b) Runtime exception
+					c) 3
+					d) c2w
+9.
+class ManLabs{
+					String arr[] = {"Hey", "Hello", "Bye"};
+					public static void main(final String[] args) {
+						args = arr;
+						System.out.println(args[2]);
+					}
+				}
+Compile this file as : javac Filename.java
+Run this file as : java ManLabs 1 2 3
+Options :	a) Bye
+					b) Compile time error
+					c) Runtime exception
+					d) 3
+
+10.
+class ManLabs{
+					public static void main(String... args) {
+						System.out.println(args.length);
+					}
+				}
+Compile this file as : javac Filename.java
+Run this file as : java ManLabs 1 2 3
+Options :	a) Compile time error
+					b) Runtime exception
+					c) 3
+					d) 2
+
+11.
+class ManLabs{
+	public static  void main(String[] args){
+		System.out.println((args.length>2)?args[0]+10:args[1]+20);
+	}
+}
+Run this file as :java ManLabs 10 20 
+Options:
+	a.40
+	b.1020
+	c.30
+	d.2020
+
+12.
+class ManLabs{
+	public static  void main(String[] args){
+		System.out.println((args.length>2)?Integer.parseInt(args[0])%10:Integer.parseInt(args[1])/20);
+	}
+}
+Run this file as :java ManLabs 10 20 
+Options:
+	a.0
+	b.1
+	c.compile error
+	d.invalid syntax
+
+13.
+
+class ManLabs {
+	public static void main(String[] myArr) {
+		
+		System.out.println(myArr[0]);
+		System.out.println(myArr[1]);
+		System.out.println(myArr[2]);
+	}
+}
+
+javac P1.java
+java ManLabs
+Options:
+(a)null null null
+(b)Compile Time Error
+(c)GarbageValue GarbageValue GarbageValue 
+(d)Runtime Error:- ArrayIndexOutOfBoundException
+
+**********************************************************************
+Control Flow Statement
+
+1.
+class ManLabs{
+					public static void main(String[] args) {
+						if(true)
+							System.out.println("Inside if1");
+							System.out.println("Inside if2");
+					}
+				}
+Options	:	A) Compile time error
+					B) Inside if1
+					C) Inside if2
+					D) Inside if1
+					   Inside if2
+
+2.
+class ManLabs{
+					public static void main(String[] args) {
+						if(true)
+							System.out.println("Inside if1");
+							System.out.println("Inside if2");
+						else
+							System.out.println("Inside else");
+					}
+				}
+Options	:	A) Compile time error
+					B) Inside if1
+					C) Inside if2
+					D) Inside if1
+					   Inside if2
+
+3.
+class ManLabs{
+					public static void main(String[] args) {
+						if(true)
+							if(false)
+								System.out.println("Inside if");
+							else
+								System.out.println("Inside else1");
+						else
+							System.out.println("Inside else2");
+					}
+				}
+Options	:	A) Inside else1
+					B) Inside else2
+					C) Compile time error
+					D) Inside if
+
+4.
+class ManLabs{
+					public static void main(String[] args) {
+						if(10){
+							System.out.println("Inside if");
+						}else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) error : incompatible types: int cannot be converted to boolean
+					B) Inside if
+					C) Inside else
+					D) error : value not mapped to a boolean
+
+5.
+class ManLabs{
+					public static void main(String[] args) {
+						if(new Boolean(true)){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) error : cannot find symbol
+					B) error : incompatible types: Boolean type cannot be converted to boolean
+					C) Inside if
+					D) Inside else
+6.
+class ManLabs{
+					public static void main(String[] args) {
+						if(new Boolean()){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) error : cannot find symbol
+					B) Inside if
+					C) Inside else
+					D) error : no suitable constructor found
+
+7.
+class ManLabs{
+					public static void main(String[] args) {
+						if(new Boolean("false")){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) error : no suitable constructor found
+					B) Inside if
+					C) Inside else
+					D) error : illegal start of expression
+
+8.
+class ManLabs{
+					public static void main(String[] args) {
+						if(false){
+							System.out.println("Inside if");
+						}
+						else(true){
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) Inside if
+					B) Inside else
+					C) Compile time error
+					D) None of the above
+9.
+class ManLabs{
+					public static void main(String[] args) {
+						switch(1){
+							case 'c' :  System.out.println("char option");
+										break;
+							case 1 :    System.out.println("int option");
+										break;
+							case "s" :  System.out.println("String option");
+										break;
+							default : System.out.println("Default option");
+						}
+					}
+				}
+Options	:	A) error : incompatible types : char cannot be converted to int
+					B) error : incompatible types : String cannot be converted to int
+					C) int option
+					D) Default option
+
+10.
+class ManLabs{
+					public static void main(String[] args) {
+						switch('a'){
+							case 'a' :  System.out.println("char option");
+										break;
+							case 97 :   System.out.println("int option");
+							default :   System.out.println("Default option");
+						}
+					}
+				}
+Options	:	A) char option
+					B) Compile time error
+					C) int option
+					D) int option
+					   Default option
+
+11.
+class ManLabs{
+					public static void main(String[] args) {
+						switch('a'){
+							default :   System.out.println("Default option");
+							case 'a' :  System.out.println("b");
+										break;
+							case 'b' :   System.out.println("a");
+						}
+					}
+				}
+Options	:	A) Default option
+					B) Default option
+					   b
+					C) a
+					D) b
+
+12.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main");
+						switch('b'){
+							case 'a' :  {
+								System.out.println("a option");
+							}
+							case 'b' :  {
+								System.out.println("b option");
+							}
+							case 'c' :  {
+								System.out.println("c option");
+							}
+							default : System.out.println("default option");
+						}
+					}
+				}
+Options	:	A) Inside main
+					   default option
+					B) Compile time error
+					C) Inside main
+					   b option
+					D) Inside main
+					   b option
+					   c option
+					   default option
+
+13.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						return;
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside main2
+					B) Inside main1
+					   Inside m1
+					   Inside main2
+					C) error : unreachable statement
+					D) error : illegal start of expression
+
+14.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(true){
+							System.out.println("Inside if");
+							return;
+						}
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside if
+					   Inside main2
+					B) Inside main1
+					   Inside if
+					   Inside m1
+					   Inside main2
+					C) error : unreachable statement
+					D) error : illegal start of expression
+
+15.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(false){
+							System.out.println("Inside if");
+							return;
+						}
+						else{
+							System.out.println("Inside else");
+							return;
+						}
+						System.out.println("Inside m1");
+					}
+				}
+		Options	:	A) Inside main1
+					   Inside if
+					   Inside main2
+					B) Inside main1
+					   Inside else
+					   Inside main2
+					C) Inside main1
+					   Inside else
+					   Inside m1
+					   Inside main2
+					D) error : unreachable statement
+
+16.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(false){
+							System.out.println("Inside if");
+							return;
+						}
+						else if(true || false){
+							System.out.println("Inside else if");
+						}
+						else{
+							System.out.println("Inside else");
+							return;
+						}
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside else if
+					   Inside m1
+					   Inside main2
+					B) Inside main1
+					   Inside else if
+					   Inside main2
+					C) Inside main1
+					   Inside else if
+					   Inside else
+					   Inside main2
+					D) Compile time error
+
+17.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(true || false){
+							System.out.println("Inside if");
+							break;
+						}
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside else if
+					   Inside main2
+					B) Inside main1
+					   Inside else if
+					   Inside m1
+					   Inside main2
+					C) error : illegal start of expression
+					D) error : break outside switch or loop
+
+18.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(false){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+						else if(true){
+							System.out.println("Inside else if");
+						}
+
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside else
+					   Inside m1
+					   Inside main2
+					B) Inside main1
+					   Inside else
+					   Inside else if
+					   Inside m1
+					   Inside main2
+					C) error : 'else' without 'if'
+					D) error : illegal start of expression
+
+19.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Inside main1");
+						m1();
+						System.out.println("Inside main2");
+					}
+					private static void m1() {
+						if(true){
+							System.out.println("Inside if");
+						}
+						else if(true){
+							System.out.println("Inside else if 1");
+							return;
+						}
+						else if(true){
+							System.out.println("Inside else if 2");
+						}
+
+						System.out.println("Inside m1");
+					}
+				}
+Options	:	A) Inside main1
+					   Inside if
+					   Inside else if 1
+					   Inside m1
+					   Inside main2
+					B) Inside main1
+					   Inside if
+					   Inside else if 1
+					   Inside else if 2
+					   Inside m1
+					   Inside main2
+					C) error : unreachable statement
+					D) Inside main1
+					   Inside if
+					   Inside m1
+					   Inside main2
+
+20.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 6;
+						if(var >= 6){
+							System.out.println("Inside if");
+						}else if(var >= 6){
+							System.out.println("Inside else if 1");
+						}else if(var >= 6){
+							System.out.println("Inside else if 2");
+						}else if(var >= 6){
+							System.out.println("Inside else if 3");
+						}else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) Inside else
+					B) Inside if
+					C) Compile time error
+					D) Inside if
+					   Inside else if 1
+					   Inside else if 2
+
+21.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 8;
+						System.out.println(var < 8);
+					}
+				}
+Options	:	A) true
+					B) false
+					C) error : incompatible types
+					D) error : illegal start of expression
+
+22.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Value >= 4 : " + m1());
+					}
+					private static boolean m1() {
+						int var = 4;
+						return var >= 4 ? true : false;
+					}
+				}
+Options	:	A) Value >= 4 : true
+					B) Value >= 4 : false
+					C) error : illegal start of expression
+					D) error : not a statement
+
+23.
+class ManLabs{
+					public static void main(String[] args) {
+						m1();
+					}
+					private static void m1() {
+						int var = 4, var1 = 0, var2 = 0;
+						var >= 4 ? var1++ : var2++;
+						if(var1 > var2)
+							System.out.println("Var 1 is incremented");
+						else
+							System.out.println("Var 2 is incremented");
+					}
+				}
+Options	:	A) Var 1 is incremented
+					B) Var 2 is incremented
+					C) error : not a statement
+					D) error : illegal start of expression
+
+24.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 10;
+						if(var=20){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) Inside if
+					B) Inside else
+					C) error : illegal start of expression
+					D) error: incompatible types: int cannot be converted to boolean
+
+25.
+class ManLabs{
+					public static void main(String[] args) {
+						boolean var = true;
+						if(var = false){
+							System.out.println("Inside if");
+						}
+						else{
+							System.out.println("Inside else");
+						}
+					}
+				}
+Options	:	A) Compile time error
+					B) Inside if
+					C) Inside else
+					D) None of the above
+
+26.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 234;
+						if(var >= 300);
+							System.out.println("Inside if");
+					}
+				}
+Options	:	A) No error, no output
+					B) error : illegal start of expression
+					C) Inside if
+					D) error : unexpected token
+
+27.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 234;
+						if(var >= 300);
+							System.out.println("Inside if");
+						else
+							System.out.println("Inside else");
+					}
+				}
+Options	:	A) error : unexpected token
+					B) Inside if
+					C) Inside if
+					   Inside else
+					D) error : 'else' without 'if'
+
+28.
+class ManLabs{
+					public static void main(String[] args) {
+						Integer var = 3;
+						switch(var){
+							case 1 : System.out.println("case 1");
+									 break;
+							case 2 : System.out.println("case 2");
+									 break;
+							case 3 : System.out.println("case 3");
+									 break;
+							default : System.out.println("default");
+									  break;
+						}
+					}
+}
+Options	:	A) error : incompatible types : Integer cannot be converted to int
+					B) error : unexpected token
+					C) case 3
+					D) default
+
+29.
+class ManLabs{
+					public static void main(String[] args) {
+						Integer var = 3;
+						switch(var){
+							case (new Integer(1)) : System.out.println("case 1");
+									 break;
+							case (new Integer(2)) : System.out.println("case 2");
+									 break;
+							case (new Integer(3)) : System.out.println("case 3");
+							
+							default : System.out.println("default");
+									  break;
+						}
+					}
+				}
+Options	:	A) case 3
+					B) case 3
+					   default
+					C) error : illegal start of expression
+					D) error : constant expression required
+
+30.
+class ManLabs{
+					public static void main(String[] args) {
+						switch(6){
+							System.out.print("Inside switch");
+							case 5 : System.out.println("case 5");
+									 break;
+							case 6 : System.out.println("case 5");
+									 break;
+							case 7 : System.out.println("case 5");
+									 break;            
+						}
+					}
+				}
+Options	:	A) case 5
+					B) Inside switch
+					    case 5
+					C) error : illegal start of expression
+					D) error : case, default or '}' expected
+
+31.
+class ManLabs{
+					public static void main(String[] args) {
+						Integer var = new Integer(100);
+						Integer var1 = new Integer(101);
+						Integer var2 = new Integer(102);
+						Integer var3 = new Integer(103);
+						switch(var){
+							case var1 : System.out.println("case 1");
+									 break;
+							case var2 : System.out.println("case 2");
+									 break;
+							case var3 : System.out.println("case 3");
+									 break;
+							default : System.out.println("default");
+									  break;
+						}
+					}
+				}
+Options	:	A) error : constant expression required
+					B) case 1
+					C) default
+					D) No error, no output
+
+32.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		int var2 = 20;
+		if((var1 = 20) == var2) {
+			System.out.println(++var1);
+		}
+		else {
+			System.out.println(var2++);
+	}
+}
+Options:
+			A)11
+			B)20
+			C)21
+			D)Compile Time Error.
+
+33.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		if(System.out.println(++var1)) {
+			System.out.println("In If");
+		}
+		else {
+			System.out.println("In Else");
+		}
+	}
+}
+Options:
+				A)11 In If
+				B)11 In Else
+				C)In Else
+				D)Compile Time Error
+
+34.
+class ManLabs {	
+	static boolean max(int var1,int var2) {
+		return var1>var2;
+	}
+	public static void main(String[] args) {
+		int var1 = 10;
+		int var2 = 20;
+		if(max(var1,var2)) {
+			System.out.println(++var1);
+		}
+		else {
+			System.out.println(++var2);
+		}
+	}
+}
+Options:
+			A)11
+			B)21
+			C)Compile Time Error.
+			D)20
+
+35.
+class ManLabs {
+	public static void main(String[] args) {
+		long var1 = 10;
+		switch(var1) {
+			case 11:
+				System.out.println("case 1");
+				break;
+			case 10:
+				System.out.println("case 2");
+				break;
+			case 20:
+				System.out.println("case 3");
+				break;		
+		}		
+	}
+}
+Options:
+				A)case 1
+				B)case 2
+				C)case 3
+				D)Compile Time Error
+
+36.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 70;
+		switch(var1) {
+			case 'F':
+				System.out.println("case 1");
+				break;
+			case 71:
+				System.out.println("case 2");	
+				break;
+			case 72:
+				System.out.println("case 3");	
+				break;
+			default:
+				System.out.println("No Matching Case");	
+		}
+	}
+}
+Options:
+			A)No Matching Case
+			B)case 1
+			C)case 2
+			D)Compile Time Error Of Loosy Conversion
+
+37.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 5;
+		for(int var2 = 0;var2 < var1;var2++) {
+			if(var2 == var1-2)
+				break;
+			System.out.print(var2+" ");
+		}		
+		System.out.println("\n"+var1);
+	}
+}
+Options:
+			A)0 1 2 3 4 5 5
+			B)0 1 2 3 3
+			C)0 1 2 5
+			D)0 1 2 3 5
+
+38.
+class ManLabs {
+	public static void main(String[] args) {
+		for(int i = 0;i<5;i++) {
+			continue;
+			System.out.print(i+" ");
+		}
+		System.out.println();
+	}
+}
+Options:
+		A)0 1 2 3 4
+		B)1 2 3 4 5
+		C)Compile Time Error.
+		D)None Of The Above.
+
+39.
+class ManLabs { 
+	public static void main(String[] args){ 
+	    char ch ='A';
+		switch(ch){
+			case A: 
+				System.out.println(1);
+				break;
+			case 65: 
+				System.out.println(2);
+				break;
+			case B: 
+				System.out.println(3);
+				break;
+			default: 
+				System.out.println("Hello");
+				break;
+			} 
+	   } 
+} 
+Options: 
+	1. 1
+	2. Compile time Error
+	3. Runtime Error
+	4. 2
+
+40.
+class ManLabs{
+	public static void main(String args[]){
+		for(int i=0;i<3 ;i++){
+			break;
+			System.out.println("Hii");
+		}
+	}
+}
+OPtions:
+	1. Hii 
+	2. No output
+	3. Error
+	4. infinte
+
+41.
+class ManLabs{
+	public static void main(String[] args){
+		int var1=15;
+		int var2=25;
+		if ((var1<var2) || (var1=5)>15)
+   			System.out.println(var1);
+		else
+   			System.out.println(var2);
+	}
+}
+OPtions: 
+	1. 15
+	2. 25
+	3. Error
+	4. No output
+
+42.
+ class ManLabs { 
+public static void main(String[] args) { 
+        int var1 = 0, var2 = 9; 
+        do { 
+            var1++; 
+            if (var2-- < var1++) { 
+                break; 
+            } 
+        } while (var1 < 5); 
+        System.out.println(var1 + " " + var2); 
+    } 
+} 
+Options: 
+    1. 2 2
+    2. 6 6
+    3. 5 5
+    4. 4 4
+
+43.
+ class ManLabs{
+   public static void main(String[] args) {   
+      Double var = -5.5;
+      String result;
+      
+      result = (var > 0.0) ? "positive" : "not positive";
+      System.out.println(var + " is " + result);
+   }
+}
+Options:
+	1. 5.5 is positive
+	2. 5.5 is not positive
+	3. Error
+	4. Some other output
+
+44.
+class ManLabs{
+	public static void main(String args[]){
+		int var=10,num=5;
+
+		int result= var=true ? luckyNum():unluckyNum();
+} 
+	static void luckyNum(){
+		System.out.println("true");
+	}
+	static void unluckyNum(){
+		System.out.println("false");
+	}
+}		
+Options:
+	1. true
+	2. false 
+	3. Compile time error
+	4. somwe other output
+
+45.
+class ManLabs{
+   public static void main(String[] args) {   
+     int var=10;
+      String result = var>0 ? "true" : ;
+      System.out.println(result);
+   }
+}
+Options:
+	1. true
+	2. Exception
+	3. Error
+	4. Some other output
+***********************************************************************
+Looping
+1.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 5;
+						System.out.println("Inside main");
+						while(var > 5);{
+							System.out.println("Inside while");
+						}
+					}
+				}
+Options	:	A) Compile time error
+					B) Inside main
+					   Inside while
+					C) Infinite loop
+					D) Inside main
+
+2.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 5;
+						System.out.println("Inside main");
+						while(var > 3);{
+							System.out.println("Inside while");
+						}
+					}
+				}
+Options	:	A) Inside main
+					B) Inside main
+					   Inside while
+					C) Inside main
+					   Inside while
+					   ...			(infinite times)
+					D) Inside main
+					   (Code goes into infinite loop with no output)
+
+3.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 5;
+						System.out.println("Inside main");
+						while(var-- > 3);{
+							System.out.println("Inside while");
+						}
+					}
+				}
+Options	:	A) Inside main
+					B) Inside main
+					   Inside while
+					C) Compile time error
+					D) Inside main
+					   (Code goes into infinite loop with no output)
+4.
+class ManLabs{
+					static int var = 5;
+					public static void main(String[] args) {
+						System.out.println("Inside main");
+						while(var > 3 && m1());
+						System.out.println(var);
+					}
+					private static boolean m1() {
+						var--;
+						return true;
+					}
+				}
+Options	:	A) Inside main
+					   5
+					B) Compile time error
+					C) Inside main
+					   2
+					D) Inside main
+					   3
+
+5.
+class ManLabs{
+					static int var = 5;
+					public static void main(String[] args) {
+						System.out.println("Inside main");
+						while(var > 3 || m1());
+						System.out.println(var);
+					}
+					private static boolean m1() {
+						var--;
+						return true;
+					}
+				}
+Options	:	A) Inside main
+					   3
+					B) Inside main
+					   5
+					C) Compile time error
+					D) Inside main
+					   (Code goes into infinite loop with no output)
+
+6.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 0;
+						do{
+							System.out.println("Inside do " + var++);
+							break;
+						}while(var < 3);
+					}
+				}
+Options	:	A) Compile time error
+					B) Inside do 0
+					C) Inside do 1
+					D) Inside do 0
+					   Inside do 1
+					   Inside do 2
+
+7.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 0;
+						do{
+							continue;
+							System.out.println("Inside do " + var++);
+						}while(var < 3);
+					}
+				}
+Options	:	A) No error, no output
+					B) Inside do 0
+					   Inside do 1
+					   Inside do 2
+					C) Inside do 0
+					D) Compile time error
+
+8.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 0;
+						do{
+							if(true)
+								continue;
+							System.out.println("Hey");
+						}while(var < 3);
+					}
+				}
+Options	:	A) No error, no output.
+					B) Compile time error
+					C) No error, no output (with infinite loop).
+					D) Hey (In infinite loop)
+
+9.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 0;
+						do{
+							System.out.println("Inside do-while");
+							while(var > 5)
+								break;
+							System.out.println("Inside do " + var++);
+						}while(var < 2);
+					}
+				}
+Options	:	A) Infinite loop
+					B) Inside do-while
+					   Inside do 0
+					   Inside do-while
+					   Inside do 1
+					C) Inside do-while
+					D) Compile time error
+
+10.
+class ManLabs{
+					static int var;
+					public static void main(String[] args) {
+						System.out.println("Before for loop var = " + var);
+						for(int i = 0; i < 5 || m1(); i++){
+						}
+						System.out.println("After for loop var = " + var);
+					}
+					private static boolean m1() {
+						var++;
+						return true;
+					}
+				}
+Options	:	A) Before for loop var = 0
+					   After for loop var = 5
+					B) Compile time error
+					C) Before for loop var = 0
+					   After for loop var = 0
+					D) Infinite loop
+
+11.
+class ManLabs{
+					static int var;
+					public static void main(String[] args) {
+						System.out.println("Before for loop var = " + var);
+						for(int i = 0; i < 5 || m1(); i++){
+						}
+						System.out.println("After for loop var = " + var);
+					}
+					private static boolean m1() {
+						var++;
+						return false;
+					}
+				}
+Options	:	A) Before for loop var = 0
+					   After for loop var = 5
+					B) Before for loop var = 0
+					   After for loop var = 1
+					C) Before for loop var = 0
+					   After for loop var = 0
+					D) Infinite loop
+12.
+class ManLabs{
+					static int var;
+					public static void main(String[] args) {
+						System.out.println("Before for loop var = " + var);
+						for(int i = 0; i < 5 && m1(); i++){
+						}
+						System.out.println("After for loop var = " + var);
+					}
+					private static boolean m1() {
+						var++;
+						return true;
+					}
+				}
+Options	:	A) Before for loop var = 0
+					   After for loop var = 5
+					B) Before for loop var = 0
+					   After for loop var = 1
+					C) Compile time error
+					D) Infinite loop
+
+13.
+class ManLabs{
+					static int var;
+					public static void main(String[] args) {
+						System.out.println("Before for loop var = " + var);
+						for(int i = 0; i < 5 , m1(); i++){
+							System.out.println("Inside for");
+						}
+						System.out.println("After for loop var = " + var);
+					}
+					private static boolean m1() {
+						var++;
+						return false;
+					}
+				}
+Options	:	A) Before for loop var = 0
+					   After for loop var = 0
+					B) Before for loop var = 0
+					   After for loop var = 1
+					C) Before for loop var = 0
+					   After for loop var = 5
+					D) Compile time error
+
+14.
+class ManLabs{
+					static int var;
+					public static void main(String[] args) {
+						System.out.println("Before for loop var = " + var);
+						for(int i = 0; i > 5 && m1(); i++){
+							System.out.println("Inside for");
+						}
+						System.out.println("After for loop var = " + var);
+					}
+					private static boolean m1() {
+						var++;
+						return false;
+					}
+				}
+Options	:	A) Before for loop var = 0
+					   After for loop var = 0
+					B) Before for loop var = 0
+					   After for loop var = 1
+					C) Before for loop var = 0
+					   Inside for
+					   After for loop var = 1
+					D) Compile time error
+
+15.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(int i = 0, j = 0; i < 1; j++){
+							System.out.println("Inside for");
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A) Before for loop
+					   Inside for
+					   After for loop
+					B) Before for loop
+					   After for loop
+					C) Infinite loop
+					D) Compile time error
+
+16.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(int i, j; i < 3; i++){
+							System.out.println("Inside for");
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A) error : variable i might not have been initialized
+					B) error : variable j might not have been initialized
+					C) Both A and B
+					D) Before for loop
+					   Inside for
+					   After for loop
+
+17.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(int i = 0, String s; i < 3; i++){
+							System.out.println("Inside for s = " + s);
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A) error : not a statement
+					B) error : variable s might not have been initialized
+					C) error : identifier expected
+					D) Both A and C
+
+18.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(String s = "For"; !s.equals("For") ;){
+							System.out.println("Inside for s = " + s);
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A)	Before for loop
+					    After for loop
+					B) error : incompatible types : String cannot be converted to int
+					C) Infinite loop
+					D) Before for loop
+					   Inside for s = For
+					   After for loop
+
+19.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(String s = "For";;){
+							System.out.println("Inside for s = " + s);
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A)	Before for loop
+					    After for loop
+					B) error : unreachable code
+					C) Infinite loop
+					D) Before for loop
+					   Inside for s = For
+					   After for loop
+
+20.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(String s = "For";;){
+							System.out.println("Inside for s = " + s);
+							if(false)
+								break;
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A)	Before for loop
+					    After for loop
+					B) error : unreachable code
+					C) Infinite loop
+					D) Before for loop
+					   Inside for s = For
+					   After for loop
+
+21.
+class ManLabs{
+					public static void main(String[] args) {
+						System.out.println("Before for loop");
+						for(String s = "For", System.out.println("Simple for");;){
+							System.out.println("Inside for s = " + s);
+							if(true)
+								break;
+						}
+						System.out.println("After for loop");
+					}
+				}
+Options	:	A) Compile time error
+					B) Before for loop
+					   After for loop
+					C) Before for loop
+					   Inside for s = For
+					   After for loop
+					D) Before for loop
+					   Simple for
+					   Inside for s = For
+					   After for loop
+
+22.
+class ManLabs{
+					public static void main(String[] args) {
+						int var = 10;
+						for(int loopVar : var){
+							System.out.println("Inside for : " + loopVar);
+							loopVar++;
+						}
+					}
+				}
+Options	:	A) Inside for : 1
+					   Inside for : 2
+					   ... (10 times)
+					B) error: for-each not applicable to expression type
+					C) Inside for : 0
+					   Inside for : 0
+					   ... (10 times)
+					D) error : variable loopVar might not have 
+23.
+class ManLabs{
+					public static void main(String[] args) {
+						int vararr[] = {1, 2, 3, 4, 5};
+						for(String loopVar : vararr){
+							System.out.print(loopVar + " ");
+						}
+					}
+				}
+		Options	:	A) No error, no output
+					B) error : incompatible types : int cannot be converted to String
+					C) error : incompatible types : String cannot be converted to int
+					D) 1 2 3 4 5
+
+24.
+class ManLabs{
+					public static void main(String[] args) {
+						int vararr[] = {11, 22, 33, 44, 55};
+						for(int loopVar : vararr){
+							System.out.print(loopVar++ + " ");
+						}
+					}
+				}
+Options	:	A) 11 12 13 14 15
+					B) 12 23 34 45 56
+					C) 11 22 33 44 55
+					D) Compile time error
+
+25.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 5;
+		for(int i=1;i<=5;i++)
+			System.out.println("i = "+i);
+		System.out.println("i = "+i);
+	}
+}	
+Options	:
+				A)1 2 3 4 5 6
+				B)1 2 3 4 5 Garbage Value
+				C)Compile Time Error.
+				D)1 2 3 4 5 0
+
+26.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 5;
+		for(int i = 10;i<=var1;i--) {
+			System.out.println(i);
+		}
+	}
+}
+Options	:
+				A)10 9 8 7 6 5
+				B)5 6 7 8 9 10
+				C)10 9 8 7 6
+				D)None Of The Above
+
+27.
+class ManLabs {
+	public static void main(String[] args) {
+		for(int var1 = 10,float var2 = 40.25f; var1 < 15;var1++,var2++) {
+			if(var2%2==0) 
+				System.out.println(var1);
+		}
+	}
+}
+Options:
+				A)No Output.
+				B)10 12 14
+				C)40.25 42.25 44.25
+				D)Compile Time Error
+
+28.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		for( ; var1 <= 15;var1++) {
+			if(var1%3 == 0) {
+				System.out.println(var1);
+			}
+		}
+	}
+}
+Options:
+			A)Compile Time Error
+			B)12
+			C)15
+			D)12 15
+
+29.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		for(System.out.println(var1) ; var1 < 15 ; System.out.println(var1),var1++) {
+			if(var1 == 12)
+				break;
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+			A)10 10 10 11 11
+			B)10 10 11 11 12   
+			C)Compile Time Error
+			D)10 10 10 11 12
+
+30.
+class ManLabs {
+	public static void main(String[] args) {
+		for(int var1 = 10 ; System.out.println(var1) ; var1++) {
+			if(var1 == 12)
+				break;
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+			A)10 10 11 11 12
+			B)10 11 12 
+			C)10 10 11 11
+			D)Compile Time Error.
+
+31.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 5;
+		for(int i = 1; i<=var1;i++)
+			int x = var1/i;
+	}
+}
+Options:
+			A)No Output
+			B)5 2 1 1 1 
+			C)Compile time error
+			D)5 1 1 1 1
+
+32.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		for(int i = var1; i < var1+5;i++);
+			System.out.println(i);
+	}
+}
+Options:
+			A)10 11 12 13 14
+			B)11 12 13 14 15
+			C)10 11 12 13 14 15
+			D)Compile Time Error.
+
+33.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 0;
+		while(false) {
+			System.out.println(++var1);
+		}
+	}
+}
+Options:
+			A)1 2 3 4 5 6........
+			B)No Output
+			C)Compile Time Error
+			D)Run Time Error
+
+34.
+class ManLabs {
+	public static void main(String[] args) {
+		int var1 = 10;
+		while(++var1<15);{
+			System.out.println(++var1);
+		}
+	}
+}
+Options:
+		A)12 14
+		B)11 13
+		C)16
+		D)Compile Time Error
+
+35.
+class ManLabs {
+	public static void main(String[] args) {
+		String var1 = new String("Manik");
+		for(char ch : var1) {
+			System.out.println(ch);
+		}
+		System.out.println();
+	}
+}
+Options:
+				A)S h a s h i
+				B)No Output
+				C)Compile Time Error
+				D)None Of The Above
+
+
+37.
+class ManLabs{
+	public static void main(String[] dsj){
+		int arr[]=new int[5];
+		for(int i=0;i<5;i++){
+			arr[i]=i*10;
+		}
+		for(int itr:arr){
+			System.out.print(itr);
+		}
+	}
+}
+Options:
+			A) 10203040
+			B) 010203040
+			C) 01020304
+			D) 010203040
+
+38.
+class ManLabs{
+	public static void main(String[] dsj){
+		int arr1[]={1,2,3,4,5};
+		for(int itr:arr1)
+			System.out.println(itr++);
+	}
+}
+Options:
+			A) 2 3 4 5 6
+			B) 1 3 5
+			C) 1 2 3 4 5 
+			D) 2 4 6
+
+39.
+class ManLabs{
+	public static void main(String[] dsj){
+		int i=10,sum=0;
+		while(i>0){
+			sum=sum-i;
+			i=i+sum;
+			
+		}
+		System.out.println(i+sum);
+	}
+}
+Options:
+			A) 10
+			B) 0
+			C) infinite loop
+			D) -10
+
+40.
+class ManLabs{
+	public static void main(String[] dsj){
+		int count=0,var=1;
+		do{
+			var++;
+			count++;
+		}while((count<10)&&(var<5));
+		System.out.println(var);
+		System.out.println(count);
+	}
+}
+Options:
+			A)5 5
+			B)5 4
+			C)4 5
+			D)4 4
+
+41.
+class ManLabs{
+	public static void main(String[] dsj){
+		int i;
+		for(i=1;i<=5;i++){
+			if(i>3){
+				System.out.print(i+",");
+			}else{
+				continue;
+			}
+		}
+		System.out.println(i--);
+
+	}
+
+}
+Options:
+			A) 4,5,5
+			B) 1,2,5
+			C) 4,5,6
+			D) 1,2,6
+
+42.
+class ManLabs{
+	public static void main(String[] dsj){
+		int i=0;
+		for(;;){
+			if(i<5){
+				i++;
+				System.out.print((i++)+",");
+			}else{
+				break;
+			}
+				
+		}
+		
+		
+	}
+}
+Options:
+		A) 1,2,3,4,5,
+		B) 1,3,5,
+		C) 0,2,4,
+		D) 2,4
+
+43.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		double var2 = 100;
+		for(int var1 : var2) {
+
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+			A) Compile time error
+			B) 1 0 0
+			C) Run time Error
+			D) Infinite loop
+
+44.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		String[] var2 = ["C","CPP","Java"]
+		for(String var1 : var2) {
+
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+			A) Compile time error
+			B) C CPP Java
+			C) Run time Error
+			D) Infinite loop
+
+45.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		char[] var2 = {'S','H','A','S','H','I'};
+		for(String var1 : var2) {
+
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+			A) Compile time error
+			B) S H A S H I
+			C) Run time Error
+			D) Infinite loop
+
+46.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		String[] var1 = {"Rachel","Joey"};
+
+		for(String var2 : var1) {
+
+			for(char var3 : var2) {
+
+				System.out.println(var3);
+			}
+		}
+	}
+}
+Options:
+			A)Compile time error
+			B) R a c h e l  J o e y
+			C) Run time Error
+			D) Infinite loop
+
+47.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		int[] var1 = {10,30,20};
+
+		for(float var2 : var1) {
+
+			System.out.println(var2);
+		}
+	}
+}
+Options:
+			A) 10 30 20
+			B) Error
+			C) Exception
+			D) 10.0 30.0 20.0
+
+48.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		int[] var1 = {65,66,67};
+
+		for(char var2 : var1) {
+
+			System.out.println(var2);
+		}
+	}
+}
+Options:
+			A) 65 66 67
+			B) Compile time Error
+			C) Exception
+			D) 'A' 'B' 'C'
+
+49.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		String[] var2 = ["C","CPP","Java"]
+		for(String var1 : var2) {
+
+			System.out.println(var1);
+		}
+	}
+}
+Options:
+		A) Compile time error
+		B) C CPP Java
+		C) Run time Error
+		D) Infinite loop
+
+50.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		int[] var1 = {10,30,20};
+
+		for(double var2 : var1) {
+
+			System.out.println(var2);
+		}
+	}
+}
+Options:
+		a - 10 30 20
+		b - Error
+		c - Exception
+		d - 10.0 30.0 20.0
+
+51.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		char[] var1 = {'A','B','C'};
+
+		for(int var2 : var1) {
+
+			System.out.println(var2);
+		}
+	}
+}
+Options:
+a - 65 66 67
+b - Compile time Error
+c - Exception
+d - 'A' 'B' 'C'
+
+52.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		int var1 = 0;
+		do {
+
+			System.out.println("ManLabs");
+		}while(var1 > 0);
+	}
+}
+Options:
+a - No output
+b - Error
+c - Exception
+d - ManLabs
+
+53.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		int var1 = 0;
+
+		for(int i = 1; i <= 3; i++)
+			System.out.println(++var1);
+			System.out.println(var1);
+	}
+}
+Options
+a - 1 1 2 2 3 3
+b-  0 0 1 1 2 2
+c - 0 0 1 1 3 3
+d - 1 2 3 3 
+
+54.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		if("True") {
+
+			System.out.println("True");
+		}
+	}
+}
+Options
+a - True
+b - False
+c - Run time error
+d - Compile time error
+
+55.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		boolean b = True;
+
+		if(b) 
+			System.out.println("In if");			
+	}
+}
+Options
+a - True
+b - False
+c - Run time error
+d - Compile time error
+
+56.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		while() {
+
+			System.out.println("ManLabs");
+		}			
+	}
+}
+Options
+a - Infinite loop
+b - Exception
+c - Run time error
+d - Compile time error
+
+57.
+class ManLabs {
+
+	public static void main(String[] args) {
+		
+		while(true) {
+
+			System.out.println("In ManLabs");	
+			continue;
+			System.out.println("ManLabs");
+		}	
+			
+	}
+}
+Options
+a - Infinite loop
+b - In ManLabs
+c - Run time error
+d - Compile time error
+
+58.
+class ManLabs{
+	public static void main(String args[]){
+		int var=10;
+		for(int i =0 ;i<5; i++){
+			int var =10;
+		}
+		System.out.println(var);
+
+	}
+}
+Options: 
+	1. 10
+	2. Compile time Error
+	3. Runtime Error
+	4. No output
+
+59.
+class ManLabs { 
+public static void main(String[] args){ 
+    int i = 0; 
+	for (System.out.println("Hello"); i < 1; i++) 
+            System.out.println(i<1); 
+    } 
+} 
+Options: 
+	1. Hello true
+	2. Compile time Error
+	3. Runtime Error
+	4. No output
+
+60.
+class ManLabs{
+	public static void main(String [] args){
+		for(int i;;)
+			System.out.println(i);
+	}
+}
+Options:
+	1. Hii infinite
+	2. Error : i is not initialized
+	3. Hii prints 1 time
+	4. No output
+
+61.
+class ManLabs{
+	public static void main(String [] args){
+		int i=0;
+		for(int i;;)
+			System.out.println("Hii");
+	}
+}
+Options:
+	1. Hii infinite
+	2. Error : i is not initialized
+	3. Hii prints 1 time
+	4. No output
+
+62.
+class ManLabs { 
+	public static void main(String [] args){
+ 	int choice = 2 ;
+   switch(choice)
+   { 
+   case 2-1: 
+        System.out.println("\nCase 1");
+        break;
+   case 1+1:
+        System.out.println("\nCase 2");
+        break;
+   		}
+	}
+}
+
+Options: 
+	1. Case 2
+	2. Compile time Error
+	3. Runtime Error
+	4. Case 1
+
+63.
+class ManLabs { 
+	public static void main(String [] args){
+ 	int choice = 1/2 ;
+   switch(choice)
+   { 
+   case 1/2: 
+        System.out.println("\nCase 1/2");
+        break;
+   case 1/1:
+        System.out.println("\nCase 1");
+        break;
+   		}
+	}
+}
+
+Options: 
+	1. Case 1/2
+	2. Compile time Error
+	3. Runtime Error
+	4. Case 1
+
+64.
+class ManLabs{
+	public static void main(String [] args){
+		for(int i=0;i<9;i++){
+			i=i*2;
+			i--;
+		}
+	}
+}
+/*
+Options:
+	1. Infinite times it run
+	2. Compile time error
+	3. Exception
+	4. Some other output
+
+65.
+class ManLabs{
+    public static void main(String sb[]){
+    ManLabs cw = new ManLabs();
+    cw.fun(10);      
+}
+    void fun(int var1){
+        while( var1 >1){
+            var1++;
+            fun(var1);
+         }
+         System.out.println(var1);
+    }
+}
+Options:
+    1. 11
+    2. 10
+    3. Compilation error
+    4. Exception
+
+ 66.
+ class ManLabs{
+    public static void main(String sb[]){
+        int var1 = 0;
+        int var2 = 0;
+
+        while( var1 <= 6 ){
+            var2 += var1++;
+        }
+
+        System.out.println(var2);
+    }
+}
+
+Options:
+    1. 21
+    2. 28
+    3. Compilation error
+    4. infinite loop
+
+ 67.
+ class ManLabs{
+    public static void main(String sb[]){
+    ManLabs cw = new ManLabs();
+    cw.fun(10);      
+}
+    void fun(int var1){
+        while( var1 >1){
+            var1++;
+            fun(var1);
+         }
+         System.out.println(var1);
+    }
+}
+Options:
+    1. 11
+    2. 10
+    3. Compilation error
+    4. Exception
+
+68.
+class ManLabs{ 
+public static void main(String[] args) { 
+        do
+            System.out.println("Hello"); 
+        while (true); 
+        System.out.println("bye"); 
+    } 
+}
+Options: 
+	1. Hello bye
+	2. bye Hello
+	3. Runtime Error
+	4. Compile time error
+
+69.
+class ManLabs{ 
+public static void main(String[] args) { 
+	int var1=10,var2=20;
+        do
+            System.out.println("Hello"); 
+        while (var1<var2); 
+        System.out.println("bye"); 
+    } 
+}
+Options: 
+	1. Hello bye
+	2. bye Hello
+	3. Hello prints infinite times
+	4. Compile time error
+
+70.
+class ManLabs{
+	public static void main(String args[]){
+		int arr[]= {10,20,30,40,50};
+		for(int i : arr){
+			if(i<1)
+				System.out.println("Hello");
+			else
+				System.out.println("Bye");		
+		}
+		
+	}
+}
+Options:
+	1. Hello and 4 times Bye
+	2. Bye printed 5 times
+	3. Exception : Array index out of bound
+	4. Error
+
+71.
+class ManLabs{  
+	public static void main(String[] args) {   
+	    outerLoop:  
+	        for(int i=1;i<=3;i++){  
+	            innerLoop:  
+	                for(int j=1;j<=3;j++){  
+	                    if(i==2&&j==2){  
+	                        break outerLoop;  
+	                    }  
+	                    System.out.println(i+" "+j);  
+	                }  
+	        }  
+	}  
+}
+OPtions:
+    1. 1 1
+       1 2
+       1 3
+       2 1
+
+    2. 1 1
+       1 2
+
+    3. 1 1
+       1 2
+       1 3
+
+    4. 1 2
+       1 3
+       2 1
+
+72.
+class ManLabs{
+	public static void main(String [] args){
+		for(int i=0;i<3;i++){
+			System.out.println("Hii");
+			for(;i<3;i++)
+				System.out.println("BYE");
+		}
+	}
+}
+Options: 
+	1. hii bye bye bye
+	2. hii 3 times and bye 3 times
+	3. Error
+	4. No output
+**********************************************************************************************
+Input and Output:
+
+1.	import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {                                                                     
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String codeWord = br.readLine();
+		
+		System.out.println(codeWord);
+    }
+}
+
+Input - James Gosling 
+
+(a) James
+(b) Gosling
+(c) James Gosling
+(d) Runtime error
+
+2.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arrp[]) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader());
+		String classCode = br.readLine();
+		
+		System.out.println(classCode);
+	}
+}
+
+input - Class S19
+
+(a) Class
+(b) S19
+(c) Class S19
+(d) Compile time error
+
+3.
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		int highScore = br.readLine();
+		System.out.println(highScore);
+	}
+}
+
+input - 123456789
+
+(a) 1234
+(b) 123456
+(c) Compile time error
+(d) Runtime error
+
+
+4.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[])  {
+
+		try {
+			InputStreamReader isr = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(isr);
+			
+			int totalKeyboardKeys = Integer.parseInt(br.readLine());
+			System.out.println(totalKeyboardKeys);
+
+		} catch(IOException obj) {
+			System.out.println("IOException occurred");
+		} 
+	}
+}
+
+input - 104
+
+(a) 104
+(b) IOException occurred
+(c) Compile time error
+(d) Runtime error
+
+5.
+import java.io.*;
+class ManLabs {
+
+	public static void main(String arr[])  {
+
+		try {
+			InputStreamReader isr = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(isr);
+
+		} catch(IOException obj) {
+			System.out.println("IOException occurred");
+		}
+
+		char tier = br.read();
+		System.out.println(tier);
+	}
+}
+
+input - S
+
+(a) IOException occurred
+(b) S
+(c) Compile time error
+(d) Runtime error
+
+6.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		char tier = br.read();
+		System.out.println(tier);
+	}
+}
+
+input - Tier S
+
+(a) T
+(b) S
+(c) Compile time error
+(d) Runtime error
+
+7.
+import java.io.*;
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		char division = (char)br.read();
+		System.out.println(division);
+	}
+}
+
+input - ManLabs
+
+(a) C
+(b) b
+(c) Compile time error
+(d) Runtime error
+
+8.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+
+		int age = isr.read();
+		System.out.println(age);
+	}
+}
+
+input - ASCII
+
+(a) A
+(b) 97
+(c) 65
+(d) Compile time error
+
+9.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		
+		int firstLetter = isr.read();
+		System.out.println(firstLetter);
+	}
+}
+
+
+input - 0
+
+(a) 0
+(b) 48
+(c) 49
+(d) None of the above
+
+
+10.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		int isrRead = isr.read();
+		int brRead = br.read();
+
+		System.out.println(isrRead == brRead);
+	}
+}
+
+input - a 
+		a
+
+(a) a
+(b) true
+(c) false
+(d) Compile time error
+
+11.
+
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		int isrRead = isr.read();
+		br.skip(1);
+		int brRead = br.read();
+
+		System.out.println(isrRead == brRead);
+	}
+}
+
+input - A
+		A
+
+(a) A
+(b) true
+(c) false
+(d) None of the above
+
+
+12.
+import java.io.*;
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		String country1 = br.readLine();
+		br.skip(5);
+		String country2 = br.readLine();
+
+		System.out.println(country1 + " " + country2);
+	}
+}
+
+input - Algeria
+		Argentina
+
+(a) Al Argentina
+(b) Algeria tina
+(c) Algeria ina
+(d) Compile time error
+
+
+13.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) {
+
+		ManLabs obj = new ManLabs();
+		obj.getName();
+	}
+
+	void getName() throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		br.skip(2);
+		String name = br.readLine();
+		System.out.println(name);
+	}
+}
+
+input - Ryzen
+
+(a) Ryzen
+(b) Ry
+(c) Zen
+(d) Compile time error
+
+
+14.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String arr[]) throws IOException {
+
+		ManLabs obj = new ManLabs();
+		obj.getSalary();
+	}
+
+	void getSalary() throws IOException {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		double salary = Double.parseDouble(br.readLine());
+		System.out.println(salary);
+	}
+}
+
+input - 1200000.0
+
+(a) 1200000.0
+(b) 120
+(c) Compile time error
+(d) Runtime exception
+
+15.
+import java.io.*;
+
+class ManLabs {
+
+	public static void main(String strArr[]) throws Exception {
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		br.skip(3);
+		String str = br.readLine();
+		System.out.println(str);
+	}
+}
+
+input - Dr.Java
+
+(a) Dr.Java
+(b) Java
+(c) Dr.J
+(d) Compile time error
+
+
+16.
+class Demo{
+					public static void main(String[] args){
+						BufferedReader br = new BufferedReader();
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+		Input :	Hello
+		
+		Options :	A) Hello
+					B) Error : Cannot find symbol
+					C) Error: no suitable constructor found
+					D) Error: unreported exception IOException
+
+17.
+import java.io.*;
+				class Demo{
+					public static void main(String[] args){
+						BufferedReader br = new BufferedReader();
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+		Input : Hello
+		
+		Options :	A) Hello
+					B) Runtime exception
+					C) Error: no suitable constructor found
+					D) Error: unreported exception IOException
+
+18.
+import java.io.BufferedReader;
+
+				class Demo{
+					public static void main(String[] args){					
+						BufferedReader br = new BufferedReader(new InputStreamReader());
+						String str = br.readLine();
+						System.out.println(str);					
+					}
+				}
+Input : Hello
+		
+Options :	A) Hello
+			B) Error : Cannot find symbol
+			C) Error: no suitable constructor found
+			D) Error: unreported exception IOException
+
+19.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args){
+						BufferedReader br = new BufferedReader(new InputStreamReader());
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+Input :	Hello
+Options :	A) Hello
+			B) Runtime exception
+			C) Error: no suitable constructor found
+			D) Error: unreported exception IOException
+
+20.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args){
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						System.out.println("Hello");
+					}
+				}
+		
+Options :	A) Hello
+					B) Error: unreported exception IOException
+					C) Runtime exception
+					D) No output
+
+21.
+import java.io.BufferedReader;
+				import java.io.InputStreamReader;
+
+				class Demo{
+					public static void main(String[] args){
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+Input : Hello
+		
+Options :	A) Hello
+					B) Error : Cannot find symbol
+					C) Error: unreported exception IOException
+					D) Runtime exception
+
+22.
+import java.io.BufferedReader;
+				import java.io.InputStreamReader;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+Input : Hello
+		
+Options :	A) Hello
+			B) Error : unreported exception IOException
+			C) Error : Cannot find symbol
+			D) Runtime exception
+
+23.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 5);
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+Input :	Hello guys!
+		
+Options :	A) Hello
+			B) Hello guys!
+			C) Hello guys
+			D) Error
+
+24.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 5);
+						String str = br.readLine();
+						br.skip(1);
+						System.out.println(str);
+					}
+				}
+Input : Hello
+		
+Options :	A) Hello
+			B) Wait for next input
+			C) Compile time error
+			D) Runtime exception
+
+25.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str = br.readLine();
+						br.skip(1);
+						System.out.println(str);
+					}
+				}
+Input : Hello
+		guys
+				
+Options :	A) Hello
+			B) guys
+			C) Hello
+			   guys
+			D) Error
+
+26.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						br.skip(5);
+						String str = br.readLine();
+						System.out.println(str);
+					}
+				}
+Input :	Hello
+		
+Options :	A) Runtime exception
+			B) Hello
+			C) No output
+			D) New line
+
+27.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						int ch = br.read();
+						System.out.println(ch);
+					}
+				}
+		Input : 'New line (\n aka Enter press)'
+		
+		Options :	A) Runtime exception
+					B) Error : possible lossy conversion
+					C) New line
+					D) 10
+
+28.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						br.skip(2);
+						char ch = br.read();
+						System.out.println(ch);
+					}
+				}
+Input : 13
+Options :	A) Runtime exception
+					B) Error : possible lossy conversion
+					C) New line
+					D) Unreadable character
+
+29.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						char ch = (char) br.read();
+						System.out.println(ch);
+					}
+				}
+Input : A
+		
+Options :	A) New line
+					B) Compile time error
+					C) A
+					D) Runtime exception
+
+30.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str1 = br.readLine();
+						char ch = (char) br.read();
+						String str2 = br.readLine();
+						System.out.println(str1);
+						System.out.println(ch);
+						System.out.println(str2);
+					}
+				}
+		Input :	Hello
+				A
+				Bye
+				
+		Options :	A) Hello
+					   A
+					   New line
+					B) Hello
+					   A
+					C) Hello
+					   A
+					   Bye
+					D) Hello
+					   A
+					   ye
+
+31.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str1 = br.readLine();
+						char ch = (char) br.read();
+						br.skip(0);
+						String str2 = br.readLine();
+						System.out.println(str1);
+						System.out.println(ch);
+						System.out.println(str2);
+					}
+				}
+		Input : Hello
+				A
+				Bye
+				
+		Options :	A) Hello
+					   A
+					   New line
+					B) Hello
+					   A
+					C) Hello
+					   A
+					   Bye
+					D) Error
+
+32.
+import java.io.*;
+
+				class Demo{
+					public static void main(String[] args) throws IOException{
+						BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+						String str1 = br.readLine();
+						char ch = (char) br.read();
+						br.skip(1);
+						String str2 = br.readLine();
+						System.out.println(str1);
+						System.out.println(ch);
+						System.out.println(str2);
+					}
+				}
+		Input :	Hello
+				Bye
+				
+		Options :	A) Hello
+					   Bye
+					B) Hello
+					   B
+					   e
+					C) Hello
+					   B
+					   New line
+					D) Hello
+					   Bye
+
+
+33.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String s1 = br.readLine();
+		String s2 = br.readLine();
+		System.out.println(s1 + " " + s2);
+	}
+}*/
+/*
+A) Two combined strings s1 and s2
+B) Two combined strings s1 and s2, separated by space
+C) Throws Runtime Exception
+D) Compile time error
+
+34.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String s1 = br.readLine();
+		String s2 = br.readLine();
+		System.out.println(s1 + " " + s2);
+	}
+}*/
+/*
+A) Two combined strings s1 and s2
+B) Two combined strings s1 and s2, separated by space
+C) Throws Runtime Exception
+D) Compile time error
+
+35.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String s = br.readLine();
+		Float f = Float.parseFloat(br.readLine());
+		System.out.println(s + " " + f);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) No output 
+D) A string and float value will be printed
+
+36.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String s = br.readLine();
+		Integer f = Integer.parseInt(br.readLine());
+		System.out.println(s + " " + f);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) No output 
+D) A string and int value will be printed
+
+
+37.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c = (char)br.read();
+		String s = br.readLine();
+		System.out.println(s);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) s will never be read hence no specific output for s
+D) Ambiguity
+
+38.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c = (char)br.read();
+		br.skip(1);
+		String s = br.readLine();
+		System.out.println(s);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) S is not read
+D) Value of s
+
+39.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c = br.readLine().charAt(0);
+		String s = br.readLine();
+		System.out.println(s);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) S is not read
+D) Value of s
+
+40.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c = (char)br.read();
+		br.skip(1);
+		int age = Integer.parseInt(br.readLine());
+		System.out.println(age);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) null
+D) value of age
+
+41.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c = br.readLine().charAt(0);	
+		int age = Integer.parseInt(br.readLine());
+		System.out.println(age);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) age is not read
+D) Value of age
+
+
+42.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		br.close();
+		String s = br.readLine();
+		System.out.println(s);
+	}
+}*/
+
+/*
+/*
+A) Error
+B) Exception
+C) S is not read
+D) Value of s
+
+43.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Character.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+44.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Integer.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+45.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Float.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+46.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Double.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+47.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Long.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+48.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Short.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+49.
+class Demo {
+
+	public static void main(String[] args) {
+		
+		System.out.println("B" + Byte.SIZE);
+	}
+}*/
+/*
+A) 8
+B) 16
+C) 32
+D) 64
+
+50.
+import java.io.*;
+class Demo {
+
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+	public static void main(String[] args) throws IOException {
+		
+		String s = br.readLine();
+		System.out.println(s);
+	}
+}*/
+/*
+A) Error
+B) Exception
+C) S is not read
+D) Value of s
+
+51.
+import java.io.*;
+class Demo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		//suppose input is 1.1
+		Float f = Float.parseFloat(br.readLine());
+
+		if (f == 1.1)
+			System.out.println(true);
+
+		else
+			System.out.println(false);
+	}
+}*/
+
+/*
+A) true
+B) false
+C) Error
+D) Exception
+
+52.
+class Demo {
+
+	//no command line argument is given
+	public static void main(String[] args) {
+		
+		System.out.println(Integer.parseInt(args[0]));
+	}
+}
+/*
+A) IOException
+B) EOFException
+C) AWTException
+D) IndexOutOfBoundsException
+
+53.
+import java.io.BufferedReader;
+
+class ManLabs {
+	public static void main(String[] args) {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String var1 = br.readLine();
+		String var2 = br.readLine(); 
+		System.out.println(var1 + var2);
+	}
+}
+
+Input :- 
+    Manik
+    Sandy
+
+a)Manik Sandy
+b)ManikSandy
+c)Compile Time Error
+d)Run Time Error
+
+
+54)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int var1 = br.read();
+		int var2 = br.read();
+		System.out.println(++var1 + var2++);
+	}
+}
+
+Input:-
+	1
+	2
+
+a)4
+b)100
+c)2
+d)60
+e)Run Time Error
+
+
+55)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
+		String var1 = new String();		
+		
+		var1 = var1 + br.read();
+		var1 = var1 + (char)br.read();
+		System.out.println(var1);
+	}
+}
+
+Input :- 83
+
+a)S
+b)8
+c)83
+d)563
+e)Compile Time Error
+f)Run Time Error
+
+
+56)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char var1 = (char)br.read();
+		String var2 = br.readLine();
+		System.out.println(var1 + var2);
+	}
+}
+
+Input :- a
+		 Manik
+
+a)aManik
+b)Manika
+c)Compile Time Error
+d)a
+
+
+57)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
+		
+		char var1 = (char)br.read();
+		br.read();
+		String var2 = br.readLine();	
+		System.out.println(var2 + " "+var1);
+	}
+}
+
+Input :- B
+	     Manik
+ 
+a)Compile Time Error
+b)B Manik
+c)Manik B
+d)Run Time Error
+e)B
+f)Manik
+
+
+58)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		float var1 = Integer.parseInt(br.readLine());	
+		float var2 = Integer.parseInt(br.readLine());	
+		
+		System.out.println(++var1 + var2++);
+	}
+} 
+
+Input :- 10
+		 20	
+
+a)31
+b)31.0
+c)Compile Time Error
+d)Run Time Error
+e)30.0
+
+
+59)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+	
+		char var1 = (char)br.read();
+		br.close();
+		String var2 = br.readLine();
+		System.out.println(var1+var2);
+	}
+}
+
+Input :- Manik
+
+a)Manik
+b)Compile Time Error
+c)Run Time Error : java.io.IOException : Stream Closed
+d)S
+
+
+60)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+	
+		char var1 = (char)br.read();
+		isr.close();
+		String var2 = br.readLine();
+		System.out.println(var1+var2);
+	}
+}		 
+
+Input :- Manik
+
+a)Manik
+b)Compile Time Error
+c)Run Time Error : java.io.IOException : Stream Closed
+d)S
+
+
+61)
+import java.io.*;
+
+class ManLabs {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	
+		
+		char var1 = (char)br.read();
+		br.skip(1);
+		String var2 = br.readLine();
+		
+		System.out.println(var2+" "+var1);
+	}
+}
+
+Input :- B
+		 Manik
+
+a)B Manik
+b)Manik B
+c)Run Time Error
+d)B
+
+
+62)
+import java.util.Scanner;
+
+class ManLabs {
+	public static void main(String[] args) {
+			
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<3;i++) {
+			char var1 = (char)sc.nextByte();		
+			System.out.println(var1);
+		}
+	}
+}
+
+Input :- 65
+		 97
+		 128	
+
+a)Run Time Error
+b)Compile Time Error 
+c)A a  
+d)A a 128
+
+
+63)
+import java.util.*;
+
+class ManLabs {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char var1 = sc.next().charAt(0);
+		String var2 = sc.nextLine();
+		System.out.println(var1+" "+var2);
+	}
+}
+
+Input :- Manik
+
+a)Manik
+b)Run Time Error
+c)S
+d)S hashi 
+
+
+64)
+import java.util.*;
+
+class ManLabs {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String var1 = sc.next();
+		String var2 = sc.nextLine();
+		System.out.println(var1+" "+var2);
+	}
+}
+
+Input :- Manik Bagal
+
+a)Manik  Bagal
+b)Manik Bagal
+c)Run Time Error
+d)Manik
+  Bagal
+
+
+65)
+import java.util.*;
+
+class ManLabs {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.hasNextInt());
+	}
+}
+
+Input :- 35
+
+a)true
+b)false
+c)35
+d)Run Time Error
+
+
+
+
+
+
