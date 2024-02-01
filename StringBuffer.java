@@ -24,6 +24,7 @@ public class StringBuffer {
                 System.out.print(Arr[i][j]);
             }
             System.out.println();
+            
         }
 
     }
